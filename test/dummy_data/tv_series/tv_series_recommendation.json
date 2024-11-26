@@ -1,0 +1,455 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "backdrop_path": "/gc8PfyTqzqltKPW3X0cIVUGmagz.jpg",
+      "id": 1396,
+      "name": "Breaking Bad",
+      "original_name": "Breaking Bad",
+      "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family's financial future at any cost as he enters the dangerous world of drugs and crime.",
+      "poster_path": "/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        18,
+        80
+      ],
+      "popularity": 571.19,
+      "first_air_date": "2008-01-20",
+      "vote_average": 8.916,
+      "vote_count": 14495,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/aq2yEMgRQBPfRkrO0Repo2qhUAT.jpg",
+      "id": 44217,
+      "name": "Vikings",
+      "original_name": "Vikings",
+      "overview": "The adventures of Ragnar Lothbrok, the greatest hero of his age. The series tells the sagas of Ragnar's band of Viking brothers and his family, as he rises to become King of the Viking tribes. As well as being a fearless warrior, Ragnar embodies the Norse traditions of devotion to the gods. Legend has it that he was a direct descendant of Odin, the god of war and warriors.",
+      "poster_path": "/bQLrHIRNEkE3PdIWQrZHynQZazu.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        10759,
+        18,
+        10768
+      ],
+      "popularity": 484.472,
+      "first_air_date": "2013-03-03",
+      "vote_average": 8.092,
+      "vote_count": 6910,
+      "origin_country": [
+        "CA"
+      ]
+    },
+    {
+      "backdrop_path": "/rAOjnEFTuNysY7bot8zonhImGMh.jpg",
+      "id": 1402,
+      "name": "The Walking Dead",
+      "original_name": "The Walking Dead",
+      "overview": "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+      "poster_path": "/n7PVu0hSz2sAsVekpOIoCnkWlbn.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        10759,
+        18,
+        10765
+      ],
+      "popularity": 424.369,
+      "first_air_date": "2010-10-31",
+      "vote_average": 8.109,
+      "vote_count": 16525,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/etj8E2o0Bud0HkONVQPjyCkIvpv.jpg",
+      "id": 94997,
+      "name": "House of the Dragon",
+      "original_name": "House of the Dragon",
+      "overview": "The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.",
+      "poster_path": "/oxmdHR5Ka28HAJuMmS2hk5K6QQY.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        10765,
+        18,
+        10759
+      ],
+      "popularity": 350.402,
+      "first_air_date": "2022-08-21",
+      "vote_average": 8.4,
+      "vote_count": 5004,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/yGNnjoIGOdQy3douq60tULY8teK.jpg",
+      "id": 63247,
+      "name": "Westworld",
+      "original_name": "Westworld",
+      "overview": "A dark odyssey about the dawn of artificial consciousness and the evolution of sin. Set at the intersection of the near future and the reimagined past, it explores a world in which every human appetite, no matter how noble or depraved, can be indulged.",
+      "poster_path": "/8MfgyFHf7XEboZJPZXCIDqqiz6e.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        10765,
+        37
+      ],
+      "popularity": 188.494,
+      "first_air_date": "2016-10-02",
+      "vote_average": 8,
+      "vote_count": 5466,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/4q6TBkY0Ilx7WtV5LX8HRqNHr5J.jpg",
+      "id": 19885,
+      "name": "Sherlock",
+      "original_name": "Sherlock",
+      "overview": "A modern update finds the famous sleuth and his doctor partner solving crime in 21st century London.",
+      "poster_path": "/7WTsnHkbA0FaG6R9twfFde0I9hl.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        80,
+        18,
+        9648
+      ],
+      "popularity": 154.394,
+      "first_air_date": "2010-07-25",
+      "vote_average": 8.519,
+      "vote_count": 5428,
+      "origin_country": [
+        "GB"
+      ]
+    },
+    {
+      "backdrop_path": "/900tHlUYUkp7Ol04XFSoAaEIXcT.jpg",
+      "id": 87108,
+      "name": "Chernobyl",
+      "original_name": "Chernobyl",
+      "overview": "The true story of one of the worst man-made catastrophes in history: the catastrophic nuclear accident at Chernobyl. A tale of the brave men and women who sacrificed to save Europe from unimaginable disaster.",
+      "poster_path": "/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        18
+      ],
+      "popularity": 130.871,
+      "first_air_date": "2019-05-06",
+      "vote_average": 8.68,
+      "vote_count": 6339,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/rwYvhVv0vwbulMwxOfEsuAr1JrT.jpg",
+      "id": 1418,
+      "name": "The Big Bang Theory",
+      "original_name": "The Big Bang Theory",
+      "overview": "Physicists Leonard and Sheldon find their nerd-centric social circle with pals Howard and Raj expanding when aspiring actress Penny moves in next door.",
+      "poster_path": "/ooBGRQBdbGzBxAVfExiO8r7kloA.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        35
+      ],
+      "popularity": 256.096,
+      "first_air_date": "2007-09-24",
+      "vote_average": 7.907,
+      "vote_count": 11297,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/lirPqYLTtd6XZqGn4cS1wiesTq0.jpg",
+      "id": 1622,
+      "name": "Supernatural",
+      "original_name": "Supernatural",
+      "overview": "When they were boys, Sam and Dean Winchester lost their mother to a mysterious and demonic supernatural force. Subsequently, their father raised them to be soldiers. He taught them about the paranormal evil that lives in the dark corners and on the back roads of America ... and he taught them how to kill it. Now, the Winchester brothers crisscross the country in their '67 Chevy Impala, battling every kind of supernatural threat they encounter along the way. ",
+      "poster_path": "/KoYWXbnYuS3b0GyQPkbuexlVK9.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        18,
+        9648,
+        10765
+      ],
+      "popularity": 732.485,
+      "first_air_date": "2005-09-13",
+      "vote_average": 8.301,
+      "vote_count": 7590,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/l0qVZIpXtIo7km9u5Yqh0nKPOr5.jpg",
+      "id": 1668,
+      "name": "Friends",
+      "original_name": "Friends",
+      "overview": "Six young people from New York City, on their own and struggling to survive in the real world, find the companionship, comfort and support they get from each other to be the perfect antidote to the pressures of life.",
+      "poster_path": "/2koX1xLkpTQM4IZebYvKysFW1Nh.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        35
+      ],
+      "popularity": 470.269,
+      "first_air_date": "1994-09-22",
+      "vote_average": 8.436,
+      "vote_count": 8031,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/foGkPxpw9h8zln81j63mix5B7m8.jpg",
+      "id": 71912,
+      "name": "The Witcher",
+      "original_name": "The Witcher",
+      "overview": "Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts.",
+      "poster_path": "/cZ0d3rtvXPVvuiX22sP79K3Hmjz.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        10765,
+        18,
+        10759
+      ],
+      "popularity": 166.286,
+      "first_air_date": "2019-12-20",
+      "vote_average": 8.1,
+      "vote_count": 5828,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/56v2KjBlU4XaOv9rVYEQypROD7P.jpg",
+      "id": 66732,
+      "name": "Stranger Things",
+      "original_name": "Stranger Things",
+      "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+      "poster_path": "/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        18,
+        10765,
+        9648,
+        10759
+      ],
+      "popularity": 489.132,
+      "first_air_date": "2016-07-15",
+      "vote_average": 8.6,
+      "vote_count": 17693,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/goqjRP9UBEf6ztinVt46FdoUwDC.jpg",
+      "id": 60735,
+      "name": "The Flash",
+      "original_name": "The Flash",
+      "overview": "After being struck by lightning, CSI investigator Barry Allen awakens from a nine-month coma to discover he has been  granted the gift of super speed.  Teaming up with S.T.A.R. Labs, Barry takes on the persona of The Flash, the Fastest  Man Alive, to protect his city.",
+      "poster_path": "/lJA2RCMfsWoskqlQhXPSLFQGXEJ.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        18,
+        10765
+      ],
+      "popularity": 365.979,
+      "first_air_date": "2014-10-07",
+      "vote_average": 7.785,
+      "vote_count": 11099,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/jBhcm0Rm5Uv1UaHt0TTWuRjG5G3.jpg",
+      "id": 4607,
+      "name": "Lost",
+      "original_name": "Lost",
+      "overview": "Stripped of everything, the survivors of a horrific plane crash  must work together to stay alive. But the island holds many secrets.",
+      "poster_path": "/og6S0aTZU6YUJAbqxeKjCa3kY1E.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        9648,
+        10759,
+        18
+      ],
+      "popularity": 459.842,
+      "first_air_date": "2004-09-22",
+      "vote_average": 7.9,
+      "vote_count": 4259,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/82qpvU7AzT9D8oC02fIceb5KAz8.jpg",
+      "id": 46648,
+      "name": "True Detective",
+      "original_name": "True Detective",
+      "overview": "An American anthology police detective series utilizing multiple timelines in which investigations seem to unearth personal and professional secrets of those involved, both within or outside the law.",
+      "poster_path": "/cuV2O5ZyDLHSOWzg3nLVljp1ubw.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        18,
+        9648
+      ],
+      "popularity": 217.115,
+      "first_air_date": "2014-01-12",
+      "vote_average": 8.3,
+      "vote_count": 3413,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/iprMfJ9VHS4wMhBXyHtN7l9d2hP.jpg",
+      "id": 1405,
+      "name": "Dexter",
+      "original_name": "Dexter",
+      "overview": "Dexter Morgan, a blood spatter pattern analyst for the Miami Metro Police also leads a secret life as a serial killer, hunting down criminals who have slipped through the cracks of justice.",
+      "poster_path": "/q8dWfc4JwQuv3HayIZeO84jAXED.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        80,
+        18,
+        9648
+      ],
+      "popularity": 522.356,
+      "first_air_date": "2006-10-01",
+      "vote_average": 8.189,
+      "vote_count": 4289,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/hTExot1sfn7dHZjGrk0Aiwpntxt.jpg",
+      "id": 48866,
+      "name": "The 100",
+      "original_name": "The 100",
+      "overview": "100 years in the future, when the Earth has been abandoned due to radioactivity, the last surviving humans live on an ark orbiting the planet — but the ark won't last forever. So the repressive regime picks 100 expendable juvenile delinquents to send down to Earth to see if the planet is still habitable.",
+      "poster_path": "/wcaDIAG1QdXQLRaj4vC1EFdBT2.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        10765,
+        18,
+        10759
+      ],
+      "popularity": 306.601,
+      "first_air_date": "2014-03-19",
+      "vote_average": 7.9,
+      "vote_count": 8098,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/2yDV0xLyqW88dn5qE7YCRnoYmfy.jpg",
+      "id": 4613,
+      "name": "Band of Brothers",
+      "original_name": "Band of Brothers",
+      "overview": "Drawn from interviews with survivors of Easy Company, as well as their journals and letters, Band of Brothers chronicles the experiences of these men from paratrooper training in Georgia through the end of the war. As an elite rifle company parachuting into Normandy early on D-Day morning, participants in the Battle of the Bulge, and witness to the horrors of war, the men of Easy knew extraordinary bravery and extraordinary fear - and became the stuff of legend. Based on Stephen E. Ambrose's acclaimed book of the same name.",
+      "poster_path": "/8JMXquNmdMUy2n2RgW8gfOM0O3l.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        18,
+        10768
+      ],
+      "popularity": 86.718,
+      "first_air_date": "2001-09-09",
+      "vote_average": 8.5,
+      "vote_count": 3548,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/bFVx0ydejF6NE8SEAVz95ns0o6A.jpg",
+      "id": 34307,
+      "name": "Shameless",
+      "original_name": "Shameless",
+      "overview": "Chicagoan Frank Gallagher is the proud single dad of six smart, industrious, independent kids, who without him would be... perhaps better off. When Frank's not at the bar spending what little money they have, he's passed out on the floor. But the kids have found ways to grow up in spite of him. They may not be like any family you know, but they make no apologies for being exactly who they are.",
+      "poster_path": "/9akij7PqZ1g6zl42DQQTtL9CTSb.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        18,
+        35
+      ],
+      "popularity": 571.491,
+      "first_air_date": "2011-01-09",
+      "vote_average": 8.161,
+      "vote_count": 2731,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "backdrop_path": "/kfUWupX3phYp7AleZA2U1dmVcjX.jpg",
+      "id": 60574,
+      "name": "Peaky Blinders",
+      "original_name": "Peaky Blinders",
+      "overview": "A gangster family epic set in 1919 Birmingham, England and centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby, who means to move up in the world.",
+      "poster_path": "/vUUqzWa2LnHIVqkaKVlVGkVcZIW.jpg",
+      "media_type": "tv",
+      "adult": false,
+      "original_language": "en",
+      "genre_ids": [
+        18,
+        80
+      ],
+      "popularity": 426.447,
+      "first_air_date": "2013-09-12",
+      "vote_average": 8.538,
+      "vote_count": 9963,
+      "origin_country": [
+        "GB"
+      ]
+    }
+  ],
+  "total_pages": 2,
+  "total_results": 40
+}
