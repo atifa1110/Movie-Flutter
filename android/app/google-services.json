@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "662744895242",
+    "project_id": "movieflutter-a08ca",
+    "storage_bucket": "movieflutter-a08ca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662744895242:android:f84a03013d832d583df4f3",
+        "android_client_info": {
+          "package_name": "com.dicoding.ditonton"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsqj-Pb6_1XFxgdQ2OOeGexggfXaMCVeI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662744895242:android:c853cca61e3c3fe23df4f3",
+        "android_client_info": {
+          "package_name": "com.example.movie_submission_2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsqj-Pb6_1XFxgdQ2OOeGexggfXaMCVeI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
