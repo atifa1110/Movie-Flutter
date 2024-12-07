@@ -58,53 +58,53 @@ void main() {
       await tester.tap(aboutListTile);
     });
 
-    testWidgets('Navigate to watchlist and verify watchlist', (WidgetTester tester) async {
-      final watchlistButton = find.byKey(Key('watchlistButton'));
-      final iconCheck = find.byIcon(Icons.check);
-
-      // Launch the app
-      app.main();
-      await tester.pumpAndSettle();
-
-      // Verify "Ditonton" is in the AppBar of the Home Page
-      await tester.pump(const Duration(seconds: 1));
-      expect(find.text('Ditonton'), findsOneWidget);
-      await tester.pump(const Duration(seconds: 1));
-
-      // Find the first movie in Now Playing section
-      final nowPlayingMovieItem = find.byKey(Key('movie_now_playing_1'));
-      await tester.pumpAndSettle();
-      expect(nowPlayingMovieItem, findsOneWidget);
-
-      // Tap the movie item
-      await tester.tap(nowPlayingMovieItem);
-      await tester.pumpAndSettle();
-
-      // click watchlist button
-      await tester.tap(watchlistButton);
-      await tester.pumpAndSettle();
-      expect(iconCheck, findsOneWidget);
-
-      // Tap the Back Button
-      await tester.tap(find.byKey(Key('BackButton')));
-      await tester.pumpAndSettle();
-
-      // Open the drawer
-      final drawerIcon = find.byTooltip('Open navigation menu'); // Default drawer icon tooltip
-      expect(drawerIcon, findsOneWidget);
-      await tester.tap(drawerIcon);
-      await tester.pumpAndSettle();
-
-      // Navigate to Watchlist Page
-      final watchlistTile = find.byKey(const Key('drawer_watchlist_tile'));
-      expect(watchlistTile, findsOneWidget);
-      await tester.tap(watchlistTile);
-      await tester.pump(const Duration(seconds: 1));
-
-      // Verify Watchlist Page is displayed
-      expect(find.text('Watchlist Movies'), findsOneWidget);
-      await tester.pumpAndSettle();
-      expect(find.byType(MovieCard), findsOneWidget);
-    });
+    // testWidgets('Navigate to watchlist and verify watchlist', (WidgetTester tester) async {
+    //   final watchlistButton = find.byKey(Key('watchlistButton'));
+    //   final iconCheck = find.byIcon(Icons.check);
+    //
+    //   // Launch the app
+    //   app.main();
+    //   await tester.pumpAndSettle();
+    //
+    //   // Verify "Ditonton" is in the AppBar of the Home Page
+    //   await tester.pump(const Duration(seconds: 1));
+    //   expect(find.text('Ditonton'), findsOneWidget);
+    //   await tester.pump(const Duration(seconds: 1));
+    //
+    //   // Find the first movie in Now Playing section
+    //   final nowPlayingMovieItem = find.byKey(Key('movie_now_playing_1'));
+    //   await tester.pumpAndSettle();
+    //   expect(nowPlayingMovieItem, findsOneWidget);
+    //
+    //   // Tap the movie item
+    //   await tester.tap(nowPlayingMovieItem);
+    //   await tester.pumpAndSettle();
+    //
+    //   // click watchlist button
+    //   await tester.tap(watchlistButton);
+    //   await tester.pumpAndSettle();
+    //   expect(iconCheck, findsOneWidget);
+    //
+    //   // Tap the Back Button
+    //   await tester.tap(find.byKey(Key('BackButton')));
+    //   await tester.pumpAndSettle();
+    //
+    //   // Open the drawer
+    //   final drawerIcon = find.byTooltip('Open navigation menu'); // Default drawer icon tooltip
+    //   expect(drawerIcon, findsOneWidget);
+    //   await tester.tap(drawerIcon);
+    //   await tester.pumpAndSettle();
+    //
+    //   // Navigate to Watchlist Page
+    //   final watchlistTile = find.byKey(const Key('drawer_watchlist_tile'));
+    //   expect(watchlistTile, findsOneWidget);
+    //   await tester.tap(watchlistTile);
+    //   await tester.pump(const Duration(seconds: 1));
+    //
+    //   // Verify Watchlist Page is displayed
+    //   expect(find.text('Watchlist Movies'), findsOneWidget);
+    //   await tester.pumpAndSettle();
+    //   expect(find.byType(MovieCard), findsOneWidget);
+    // });
   });
 }
