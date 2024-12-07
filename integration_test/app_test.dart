@@ -8,55 +8,55 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   group('Integration Test - Home Page Navigation', (){
-    // testWidgets('Navigate through drawer and verify tabs', (WidgetTester tester) async {
-    //   // Launch the app
-    //   app.main();
-    //   await tester.pumpAndSettle();
-    //
-    //   // Verify "Ditonton" is in the AppBar of the Home Page
-    //   await tester.pump(const Duration(seconds: 1));
-    //   expect(find.text('Ditonton'), findsOneWidget);
-    //
-    //   //Open the drawer
-    //   final drawerIcon = find.byTooltip('Open navigation menu'); // Default drawer icon tooltip
-    //   expect(drawerIcon, findsOneWidget);
-    //   await tester.tap(drawerIcon);
-    //   await tester.pumpAndSettle();
-    //
-    //   // Navigate to TV Series Page
-    //   final tvSeriesTile = find.byKey(const Key('drawer_tv_tile'));
-    //   expect(tvSeriesTile, findsOneWidget);
-    //   await tester.tap(tvSeriesTile);
-    //   await tester.pumpAndSettle();
-    //
-    //   // Verify TV Series Page is displayed
-    //   expect(find.text('Tv Series'), findsOneWidget);
-    //   await tester.pump(const Duration(seconds: 1));
-    //
-    //   // Tap the Back Button
-    //   await tester.tap(find.byTooltip('Back'));
-    //   await tester.pumpAndSettle();
-    //
-    //   // Navigate to Watchlist Page
-    //   final watchlistTile = find.byKey(const Key('drawer_watchlist_tile'));
-    //   expect(watchlistTile, findsOneWidget);
-    //   await tester.tap(watchlistTile);
-    //
-    //   await tester.pump(const Duration(seconds: 1));
-    //
-    //   // Verify Watchlist Page is displayed
-    //   expect(find.text('Watchlist Movies'), findsOneWidget);
-    //   await tester.pump(const Duration(seconds: 1));
-    //
-    //   // Tap the Back Button
-    //   await tester.tap(find.byTooltip('Back'));
-    //   await tester.pumpAndSettle();
-    //
-    //   // Navigate to About Page
-    //   final aboutListTile = find.byKey(const Key('drawer_about_tile'));
-    //   expect(aboutListTile, findsOneWidget);
-    //   await tester.tap(aboutListTile);
-    // });
+    testWidgets('Navigate through drawer and verify tabs', (WidgetTester tester) async {
+      // Launch the app
+      app.main();
+      await tester.pumpAndSettle();
+
+      // Verify "Ditonton" is in the AppBar of the Home Page
+      await tester.pump(const Duration(seconds: 1));
+      expect(find.text('Ditonton'), findsOneWidget);
+
+      //Open the drawer
+      final drawerIcon = find.byTooltip('Open navigation menu'); // Default drawer icon tooltip
+      expect(drawerIcon, findsOneWidget);
+      await tester.tap(drawerIcon);
+      await tester.pumpAndSettle();
+
+      // Navigate to TV Series Page
+      final tvSeriesTile = find.byKey(const Key('drawer_tv_tile'));
+      expect(tvSeriesTile, findsOneWidget);
+      await tester.tap(tvSeriesTile);
+      await tester.pumpAndSettle();
+
+      // Verify TV Series Page is displayed
+      expect(find.text('Tv Series'), findsOneWidget);
+      await tester.pump(const Duration(seconds: 1));
+
+      // Tap the Back Button
+      await tester.tap(find.byTooltip('Back'));
+      await tester.pumpAndSettle();
+
+      // Navigate to Watchlist Page
+      final watchlistTile = find.byKey(const Key('drawer_watchlist_tile'));
+      expect(watchlistTile, findsOneWidget);
+      await tester.tap(watchlistTile);
+
+      await tester.pump(const Duration(seconds: 1));
+
+      // Verify Watchlist Page is displayed
+      expect(find.text('Watchlist Movies'), findsOneWidget);
+      await tester.pump(const Duration(seconds: 1));
+
+      // Tap the Back Button
+      await tester.tap(find.byTooltip('Back'));
+      await tester.pumpAndSettle();
+
+      // Navigate to About Page
+      final aboutListTile = find.byKey(const Key('drawer_about_tile'));
+      expect(aboutListTile, findsOneWidget);
+      await tester.tap(aboutListTile);
+    });
 
     testWidgets('Navigate to watchlist and verify watchlist', (WidgetTester tester) async {
       final watchlistButton = find.byKey(Key('watchlistButton'));
