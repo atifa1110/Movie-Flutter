@@ -134,6 +134,7 @@ class DetailContent extends StatelessWidget {
                               style: kHeading5,
                             ),
                             FilledButton(
+                              key: const Key('watchlistButton'),
                               onPressed: () async {
                                 if (!isAddedWatchlist) {
                                   context.read<DetailMovieBloc>()
@@ -266,6 +267,7 @@ class DetailContent extends StatelessWidget {
             backgroundColor: kRichBlack,
             foregroundColor: Colors.white,
             child: IconButton(
+              key : const Key('BackButton'),
               icon: const Icon(Icons.arrow_back),
               onPressed: () {
                 Navigator.pop(context);

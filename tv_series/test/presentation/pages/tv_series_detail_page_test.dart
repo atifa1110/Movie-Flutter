@@ -148,7 +148,7 @@ void main() {
       });
 
   testWidgets(
-      'Movie detail page should display error text when no internet network',
+      'Tv detail page should display error text when no internet network',
           (WidgetTester tester) async {
         when(() => mockDetailTvSeriesBLoc.state).thenReturn(
           DetailTvSeriesState.initial().copyWith(
@@ -166,7 +166,7 @@ void main() {
       });
 
   testWidgets(
-      'Recommendations Movies should display error text when data is empty',
+      'Recommendations tv should display error text when data is empty',
           (WidgetTester tester) async {
         when(() => mockDetailTvSeriesBLoc.state).thenReturn(
           DetailTvSeriesState.initial().copyWith(
@@ -180,13 +180,13 @@ void main() {
         final textErrorBarFinder = find.text('No Recommendations');
 
         await tester.pumpWidget(makeTestableWidget(const TvSeriesDetailPage(id: 1)));
-        await tester.pump();
+        await tester.pumpAndSettle();
 
         expect(textErrorBarFinder, findsOneWidget);
       });
 
   testWidgets(
-      'Recommendations Movies should display error text when get data is unsuccessful',
+      'Recommendations tv should display error text when get data is unsuccessful',
           (WidgetTester tester) async {
         when(() => mockDetailTvSeriesBLoc.state).thenReturn(
           DetailTvSeriesState.initial().copyWith(

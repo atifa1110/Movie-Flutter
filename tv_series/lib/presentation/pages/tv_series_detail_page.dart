@@ -230,14 +230,12 @@ class DetailContent extends StatelessWidget {
                             ),
                             BlocBuilder<DetailTvSeriesBloc, DetailTvSeriesState>(
                               builder: (context, state) {
-                                final recommendationsState =
-                                    state.tvSeriesRecommendationsState;
+                                final recommendationsState = state.tvSeriesRecommendationsState;
                                 if (recommendationsState == RequestState.Loading) {
                                   return const Center(
                                     child: CircularProgressIndicator(),
                                   );
-                                } else if (recommendationsState ==
-                                    RequestState.Loaded) {
+                                } else if (recommendationsState == RequestState.Loaded) {
                                   return SizedBox(
                                     height: 150,
                                     child: ListView.builder(
@@ -276,9 +274,10 @@ class DetailContent extends StatelessWidget {
                                       itemCount: recommendations.length,
                                     ),
                                   );
-                                } else if (recommendationsState ==
-                                    RequestState.Error) {
+                                } else if (recommendationsState == RequestState.Error) {
                                   return Text(state.message);
+                                } else if (recommendationsState == RequestState.Empty) {
+                                  return const Text('No Recommendations');
                                 } else {
                                   return const Text('No Recommendations');
                                 }
@@ -333,50 +332,5 @@ class DetailContent extends StatelessWidget {
     }
 
     return result.substring(0, result.length - 2);
-  }
-
-}
-
-class TvSeriesRecommendationList extends StatelessWidget {
-  final List<TvSeries> tvSeriesList;
-
-  const TvSeriesRecommendationList({required this.tvSeriesList, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 150,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          final tvSeries = tvSeriesList[index];
-          return Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: InkWell(
-              onTap: () => Navigator.pushReplacementNamed(
-                context,
-                TvSeriesDetailPage.ROUTE_NAME,
-                arguments: tvSeries.id,
-              ),
-              child: ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(8)),
-                child: CachedNetworkImage(
-                  imageUrl: '$BASE_IMAGE_URL${tvSeries.posterPath}',
-                  placeholder: (_, __) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  },
-                  errorWidget: (_, __, error) {
-                    return const Icon(Icons.error);
-                  },
-                ),
-              ),
-            ),
-          );
-        },
-        itemCount: tvSeriesList.length,
-      ),
-    );
   }
 }

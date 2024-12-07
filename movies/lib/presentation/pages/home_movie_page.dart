@@ -53,6 +53,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               ),
             ),
             ListTile(
+              key: const Key('drawer_movie_tile'),
               leading: const Icon(Icons.movie),
               title: const Text('Movies'),
               onTap: () {
@@ -60,6 +61,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               },
             ),
             ListTile(
+              key: const Key('drawer_tv_tile'),
               leading: const Icon(Icons.live_tv_outlined),
               title: const Text('Tv Series'),
               onTap: () {
@@ -67,6 +69,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               },
             ),
             ListTile(
+              key: const Key('drawer_watchlist_tile'),
               leading: const Icon(Icons.save_alt),
               title: const Text('Watchlist'),
               onTap: () {
@@ -74,6 +77,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               },
             ),
             ListTile(
+              key: const Key('drawer_about_tile'),
               onTap: () {
                 Navigator.pushNamed(context, AboutPage.ROUTE_NAME);
               },
@@ -111,7 +115,11 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                       child: CircularProgressIndicator(),
                     );
                   } else if (state is NowPlayingMoviesHasData) {
-                    return MovieList(state.result);
+                    debugPrint('NowPlayingMoviesHasData: ${state.result.length} movies');
+                    return MovieList(
+                        sectionKey: 'movie_now_playing',
+                        movies : state.result
+                    );
                   } else {
                     return const Text('Failed');
                   }
@@ -129,7 +137,10 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                       child: CircularProgressIndicator(),
                     );
                   } else if (state is PopularMoviesHasData) {
-                    return MovieList(state.result);
+                    return MovieList(
+                        sectionKey: 'movie_popular',
+                        movies: state.result
+                    );
                   } else {
                     return const Text('Failed');
                   }
@@ -147,7 +158,10 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                       child: CircularProgressIndicator(),
                     );
                   } else if (state is TopRatedMoviesHasData) {
-                    return MovieList(state.result);
+                    return MovieList(
+                        sectionKey: 'movie_top_rated',
+                        movies : state.result
+                  );
                   } else {
                     return const Text('Failed');
                   }
@@ -185,7 +199,13 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
 class MovieList extends StatelessWidget {
   final List<Movie> movies;
 
-  const MovieList(this.movies, {super.key});
+  final String sectionKey;
+
+  const MovieList({
+    super.key,
+    required this.movies,
+    required this.sectionKey, // Accept section key
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -196,6 +216,7 @@ class MovieList extends StatelessWidget {
         itemBuilder: (context, index) {
           final movie = movies[index];
           return Container(
+            key: Key('${sectionKey}_$index'),
             padding: const EdgeInsets.all(8),
             child: InkWell(
               onTap: () {
