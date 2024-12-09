@@ -1,52 +1,48 @@
-# a199-flutter-expert-project
+# Movie Flutter App 🎬
 
-Repository ini merupakan starter project submission kelas Flutter Expert Dicoding Indonesia.
+A **Movie App** built with **Flutter** using the [The Movie Database (TMDb)](https://www.themoviedb.org/) API. This app provides a catalog of movies and TV series with various features to enhance the user experience.
+
+![Codemagic Build Status](https://api.codemagic.io/apps/67456ccfed8fdcda56f83696/67456ccfed8fdcda56f83695/status_badge.svg)
 
 ---
 
-## Tips Submission Awal
+## Features ✨
+- **Catalog of Movies & TV Series**:
+  - Now Playing
+  - Popular
+  - Top Rated
+- **Search** for Movies & TV Series.
+- **Detail Page** for Movies & TV Series.
+- **Watchlist**: Add Movies & TV Series to your watchlist.
+- **TV Series Seasons & Episodes**: View detailed season and episode information.
 
-Pastikan untuk memeriksa kembali seluruh hasil testing pada submissionmu sebelum dikirimkan. Karena kriteria pada submission ini akan diperiksa setelah seluruh berkas testing berhasil dijalankan.
+---
 
+## Screenshots 📱
+Add screenshots here if available.
 
-## Tips Submission Akhir
+---
 
-Jika kamu menerapkan modular pada project, Anda dapat memanfaatkan berkas `test.sh` pada repository ini. Berkas tersebut dapat mempermudah proses testing melalui *terminal* atau *command prompt*. Sebelumnya menjalankan berkas tersebut, ikuti beberapa langkah berikut:
-1. Install terlebih dahulu aplikasi sesuai dengan Operating System (OS) yang Anda gunakan.
-    - Bagi pengguna **Linux**, jalankan perintah berikut pada terminal.
-        ```
-        sudo apt-get update -qq -y
-        sudo apt-get install lcov -y
-        ```
-    
-    - Bagi pengguna **Mac**, jalankan perintah berikut pada terminal.
-        ```
-        brew install lcov
-        ```
-    - Bagi pengguna **Windows**, ikuti langkah berikut.
-        - Install [Chocolatey](https://chocolatey.org/install) pada komputermu.
-        - Setelah berhasil, install [lcov](https://community.chocolatey.org/packages/lcov) dengan menjalankan perintah berikut.
-            ```
-            choco install lcov
-            ```
-        - Kemudian cek **Environtment Variabel** pada kolom **System variabels** terdapat variabel GENTHTML dan LCOV_HOME. Jika tidak tersedia, Anda bisa menambahkan variabel baru dengan nilai seperti berikut.
-            | Variable | Value|
-            | ----------- | ----------- |
-            | GENTHTML | C:\ProgramData\chocolatey\lib\lcov\tools\bin\genhtml |
-            | LCOV_HOME | C:\ProgramData\chocolatey\lib\lcov\tools |
-        
-2. Untuk mempermudah proses verifikasi testing, jalankan perintah berikut.
-    ```
-    git init
-    ```
-3. Kemudian jalankan berkas `test.sh` dengan perintah berikut pada *terminal* atau *powershell*.
-    ```
-    test.sh
-    ```
-    atau
-    ```
-    ./test.sh
-    ```
-    Proses ini akan men-*generate* berkas `lcov.info` dan folder `coverage` terkait dengan laporan coverage.
-4. Tunggu proses testing selesai hingga muncul web terkait laporan coverage.
+## Technology Stack 🛠️
+This app is built using modern Flutter practices and technologies:
+- **Flutter**: Cross-platform UI toolkit.
+- **Bloc**: State management solution.
+- **Cached Network Image**: Efficient image loading and caching.
+- **Dartz**: Functional programming tools.
+- **Equatable**: Simplifies equality comparisons.
+- **Get It**: Dependency injection.
+- **Firebase Analytics & Crashlytics**: Analytics and error reporting.
+- **Flutter Rating Bar**: User rating UI component.
+- **HTTP**: REST API integration.
+- **SQFLITE**: Local database for offline capabilities.
+- **TDD Clean Architecture**: Ensures maintainable and testable code.
+- **SSL Pinning Security**: Enhanced app security.
+- **Modularization**: Organized codebase for scalability.
+- **Automated Testing**: Achieves >95% test coverage.
 
+---
+
+## Setup Instructions 🚀
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/atifa1110/Movie-Flutter.git
