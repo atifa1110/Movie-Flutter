@@ -1,39 +1,48 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Movie Flutter App 🎬
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+A **Movie App** built with **Flutter** using the [The Movie Database (TMDb)](https://www.themoviedb.org/) API. This app provides a catalog of movies and TV series with various features to enhance the user experience.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+![Codemagic Build Status](https://api.codemagic.io/apps/67456ccfed8fdcda56f83696/67456ccfed8fdcda56f83695/status_badge.svg)
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+---
 
-## Features
+## Features ✨
+- **Catalog of Movies & TV Series**:
+    - Now Playing
+    - Popular
+    - Top Rated
+- **Search** for Movies & TV Series.
+- **Detail Page** for Movies & TV Series.
+- **Watchlist**: Add Movies & TV Series to your watchlist.
+- **TV Series Seasons & Episodes**: View detailed season and episode information.
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+---
 
-## Getting started
+## Screenshots 📱
+Add screenshots here if available.
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+---
 
-## Usage
+## Technology Stack 🛠️
+This app is built using modern Flutter practices and technologies:
+- **Flutter**: Cross-platform UI toolkit.
+- **Bloc**: State management solution.
+- **Cached Network Image**: Efficient image loading and caching.
+- **Dartz**: Functional programming tools.
+- **Equatable**: Simplifies equality comparisons.
+- **Get It**: Dependency injection.
+- **Firebase Analytics & Crashlytics**: Analytics and error reporting.
+- **Flutter Rating Bar**: User rating UI component.
+- **HTTP**: REST API integration.
+- **SQFLITE**: Local database for offline capabilities.
+- **TDD Clean Architecture**: Ensures maintainable and testable code.
+- **SSL Pinning Security**: Enhanced app security.
+- **Modularization**: Organized codebase for scalability.
+- **Automated Testing**: Achieves >95% test coverage.
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+---
 
-```dart
-const like = 'sample';
-```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Setup Instructions 🚀
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/atifa1110/Movie-Flutter.git

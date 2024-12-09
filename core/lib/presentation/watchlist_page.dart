@@ -11,8 +11,7 @@ class WatchlistPage extends StatefulWidget {
   State<WatchlistPage> createState() => _WatchlistPageState();
 }
 
-class _WatchlistPageState extends State<WatchlistPage>
-    with SingleTickerProviderStateMixin {
+class _WatchlistPageState extends State<WatchlistPage> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
