@@ -8,9 +8,9 @@ A **Movie App** built with **Flutter** using the [The Movie Database (TMDb)](htt
 
 ## Features ✨
 - **Catalog of Movies & TV Series**:
-  - Now Playing
-  - Popular
-  - Top Rated
+    - Now Playing
+    - Popular
+    - Top Rated
 - **Search** for Movies & TV Series.
 - **Detail Page** for Movies & TV Series.
 - **Watchlist**: Add Movies & TV Series to your watchlist.
@@ -46,3 +46,4 @@ This app is built using modern Flutter practices and technologies:
 1. Clone the repository:
    ```bash
    git clone https://github.com/atifa1110/Movie-Flutter.git
+
