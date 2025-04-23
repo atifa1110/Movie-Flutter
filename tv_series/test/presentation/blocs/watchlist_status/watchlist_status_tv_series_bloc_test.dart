@@ -61,7 +61,7 @@ void main() {
             .thenAnswer((_) async => true);
         return watchlistStatusTvSeriesBloc;
       },
-      act: (bloc) => bloc.add(AddWatchlistTvSeries(testTvSeriesDetail)),
+      act: (bloc) => bloc.add(const AddWatchlistTvSeries(testTvSeriesDetail)),
       expect: () => [
         const WatchlistStatusTvSeriesState(
           isAddedToWatchlist: true,
@@ -83,7 +83,7 @@ void main() {
             .thenAnswer((_) async => false);
         return watchlistStatusTvSeriesBloc;
       },
-      act: (bloc) => bloc.add(AddWatchlistTvSeries(testTvSeriesDetail)),
+      act: (bloc) => bloc.add(const AddWatchlistTvSeries(testTvSeriesDetail)),
       expect: () => [
         const WatchlistStatusTvSeriesState(
           isAddedToWatchlist: false,
@@ -107,7 +107,7 @@ void main() {
             .thenAnswer((_) async => false);
         return watchlistStatusTvSeriesBloc;
       },
-      act: (bloc) => bloc.add(RemoveFromWatchlistTvSeries(testTvSeriesDetail)),
+      act: (bloc) => bloc.add(const RemoveFromWatchlistTvSeries(testTvSeriesDetail)),
       expect: () => [
         const WatchlistStatusTvSeriesState(
           isAddedToWatchlist: false,
@@ -129,7 +129,7 @@ void main() {
             .thenAnswer((_) async => true);
         return watchlistStatusTvSeriesBloc;
       },
-      act: (bloc) => bloc.add(RemoveFromWatchlistTvSeries(testTvSeriesDetail)),
+      act: (bloc) => bloc.add(const RemoveFromWatchlistTvSeries(testTvSeriesDetail)),
       expect: () => [
         const WatchlistStatusTvSeriesState(
           isAddedToWatchlist: true,

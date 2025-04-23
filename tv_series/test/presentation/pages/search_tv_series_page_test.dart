@@ -50,7 +50,7 @@ void main() {
 
   testWidgets('Page should display ListView when data is loaded',
           (WidgetTester tester) async {
-        when(() => mockSearchTvSeriesBloc.state).thenReturn(SearchTvSeriesHasData([testTvSeries]));
+        when(() => mockSearchTvSeriesBloc.state).thenReturn(const SearchTvSeriesHasData([testTvSeries]));
 
         final listViewFinder = find.byType(ListView);
 
@@ -62,7 +62,7 @@ void main() {
   testWidgets('Page should display ListView when data is loaded',
           (WidgetTester tester) async {
         when(() => mockSearchTvSeriesBloc.state)
-            .thenReturn(SearchTvSeriesHasData([testTvSeries]));
+            .thenReturn(const SearchTvSeriesHasData([testTvSeries]));
 
         final formSearch = find.byType(TextField);
         final listViewFinder = find.byType(ListView);

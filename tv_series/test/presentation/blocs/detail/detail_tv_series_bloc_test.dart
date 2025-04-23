@@ -53,7 +53,7 @@ void main() {
       'Should emit [DetailTvLoading, DetailTvLoaded, RecommendationLoading, RecommendationLoaded] when get detail tv and recommendation tv success',
       build: () {
         when(mockGetDetailTvSeries.execute(tId))
-            .thenAnswer((_) async => Right(testTvSeriesDetail));
+            .thenAnswer((_) async => const Right(testTvSeriesDetail));
         when(mockGetRecommendationTvSeries.execute(tId))
             .thenAnswer((_) async => Right(testTvSeriesList));
         return detailTvSeriesBloc;
@@ -110,7 +110,7 @@ void main() {
       'Should emit [DetailTvLoading, DetailTvLoaded, RecommendationEmpty] when get recommendation tv empty',
       build: () {
         when(mockGetDetailTvSeries.execute(tId))
-            .thenAnswer((_) async => Right(testTvSeriesDetail));
+            .thenAnswer((_) async => const Right(testTvSeriesDetail));
         when(mockGetRecommendationTvSeries.execute(tId))
             .thenAnswer((_) async => const Right([]));
         return detailTvSeriesBloc;
@@ -136,7 +136,7 @@ void main() {
       'Should emit [DetailMovieLoading, RecommendationLoading, DetailMovieLoaded, RecommendationError] when get recommendation failed',
       build: () {
         when(mockGetDetailTvSeries.execute(tId))
-            .thenAnswer((_) async => Right(testTvSeriesDetail));
+            .thenAnswer((_) async => const Right(testTvSeriesDetail));
         when(mockGetRecommendationTvSeries.execute(tId))
             .thenAnswer((_) async => const Left(ConnectionFailure('Failed')));
         return detailTvSeriesBloc;
