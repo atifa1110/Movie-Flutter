@@ -23,7 +23,7 @@ void main() {
   );
 
   var testTvSeriesResponseModel =
-  TvSeriesResponse(tvSeriesList: const <TvSeriesModel>[testTvSeriesModel]);
+  const TvSeriesResponse(tvSeriesList: <TvSeriesModel>[testTvSeriesModel]);
 
   group('fromJson', () {
     test('should return a valid model from JSON', () async {

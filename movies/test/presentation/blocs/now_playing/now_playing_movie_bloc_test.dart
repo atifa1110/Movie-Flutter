@@ -30,7 +30,7 @@ void main() {
   final tMovieList = <Movie>[testMovie];
 
   blocTest<NowPlayingMoviesBloc, NowPlayingMoviesState>(
-    'Should emit [Loading, HasData] when data is gotten succesfully',
+    'Should emit [Loading, HasData] when data is gotten successfully',
     build: () {
       when(mockGetNowPlayingMovies.execute())
           .thenAnswer((_) async => Right(tMovieList));
@@ -65,7 +65,7 @@ void main() {
     'Should emit [Loading, Error] when get now playing movies is unsuccessful',
     build: () {
       when(mockGetNowPlayingMovies.execute())
-          .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
+          .thenAnswer((_) async => const Left(ServerFailure('Server Failure')));
       return nowPlayingMoviesBloc;
     },
     act: (bloc) => bloc.add(FetchNowPlayingMovies()),

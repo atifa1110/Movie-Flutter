@@ -52,7 +52,7 @@ void main() {
       'Should emit [DetailMovieLoading, DetailMovieLoaded, RecommendationLoading, RecommendationLoaded] when get detail movie and recommendation movies success',
       build: () {
         when(mockGetDetailMovie.execute(tId))
-            .thenAnswer((_) async => Right(testMovieDetail));
+            .thenAnswer((_) async => const Right(testMovieDetail));
         when(mockGetRecommendationMovies.execute(tId))
             .thenAnswer((_) async => Right(testMovieList));
         return detailMovieBloc;
@@ -109,7 +109,7 @@ void main() {
       'Should emit [DetailMovieLoading, DetailMovieLoaded, RecommendationEmpty] when get recommendation movies empty',
       build: () {
         when(mockGetDetailMovie.execute(tId))
-            .thenAnswer((_) async => Right(testMovieDetail));
+            .thenAnswer((_) async => const Right(testMovieDetail));
         when(mockGetRecommendationMovies.execute(tId))
             .thenAnswer((_) async => const Right([]));
         return detailMovieBloc;
@@ -140,7 +140,7 @@ void main() {
       'Should emit [DetailMovieLoading, RecommendationLoading, DetailMovieLoaded, RecommendationError] when get recommendation movies failed',
       build: () {
         when(mockGetDetailMovie.execute(tId))
-            .thenAnswer((_) async => Right(testMovieDetail));
+            .thenAnswer((_) async => const Right(testMovieDetail));
         when(mockGetRecommendationMovies.execute(tId))
             .thenAnswer((_) async => const Left(ConnectionFailure('Failed')));
         return detailMovieBloc;
@@ -247,7 +247,7 @@ void main() {
 
   group('Remove From Watchlist Movie', () {
     blocTest<DetailMovieBloc, DetailMovieState>(
-      'Shoud emit [WatchlistMessage, isAddedToWatchlist] when success removed from watchlist',
+      'Should emit [WatchlistMessage, isAddedToWatchlist] when success removed from watchlist',
       build: () {
         when(mockRemoveWatchlistMovie.execute(testMovieDetail))
             .thenAnswer((_) async => const Right('Removed from Watchlist'));

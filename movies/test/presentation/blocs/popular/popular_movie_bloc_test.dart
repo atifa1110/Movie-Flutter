@@ -65,7 +65,7 @@ void main() {
     'Should emit [Loading, Error] when get popular movies is unsuccessful',
     build: () {
       when(mockGetPopularMovies.execute())
-          .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
+          .thenAnswer((_) async => const Left(ServerFailure('Server Failure')));
       return popularMoviesBloc;
     },
     act: (bloc) => bloc.add(FetchPopularMovies()),

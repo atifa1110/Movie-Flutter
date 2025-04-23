@@ -61,7 +61,7 @@ void main() {
     'Should emit [Loading, Error] when get watchlist tv series is unsuccessful',
     build: () {
       when(mockGetWatchlistMovies.execute()).thenAnswer(
-              (_) async => Left(DatabaseFailure('Database Failure')));
+              (_) async => const Left(DatabaseFailure('Database Failure')));
       return watchlistMoviesBloc;
     },
     act: (bloc) => bloc.add(FetchWatchlistMovies()),

@@ -16,7 +16,7 @@ void main() {
   });
 
   final testTv = <TvSeries>[];
-  final testQuery = 'game of thrones';
+  const testQuery = 'game of thrones';
 
   test('should get list of tv series from the repository', () async {
     // arrange

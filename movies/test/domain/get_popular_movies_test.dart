@@ -8,11 +8,11 @@ import '../helper/test_helper.mocks.dart';
 
 void main() {
   late GetPopularMovies usecase;
-  late MockMovieRepository mockMovieRpository;
+  late MockMovieRepository mockMovieRepository;
 
   setUp(() {
-    mockMovieRpository = MockMovieRepository();
-    usecase = GetPopularMovies(mockMovieRpository);
+    mockMovieRepository = MockMovieRepository();
+    usecase = GetPopularMovies(mockMovieRepository);
   });
 
   final tMovies = <Movie>[];
@@ -23,7 +23,7 @@ void main() {
           'should get list of movies from the repository when execute function is called',
           () async {
         // arrange
-        when(mockMovieRpository.getPopularMovies())
+        when(mockMovieRepository.getPopularMovies())
             .thenAnswer((_) async => Right(tMovies));
         // act
         final result = await usecase.execute();

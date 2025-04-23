@@ -78,7 +78,7 @@ void main() {
       'Should emit [WatchlistStatusState] when save data is unsuccessful',
       build: () {
         when(mockSaveWatchlistTvSeries.execute(testTvSeriesDetail)).thenAnswer(
-                (_) async => Left(DatabaseFailure('Failed Added to Watchlist')));
+                (_) async => const Left(DatabaseFailure('Failed Added to Watchlist')));
         when(mockGetWatchListStatusTvSeries.execute(testId))
             .thenAnswer((_) async => false);
         return watchlistStatusTvSeriesBloc;
@@ -124,7 +124,7 @@ void main() {
       'Should emit [WatchlistStatusState] when remove data is unsuccessful',
       build: () {
         when(mockRemoveWatchlistTvSeries.execute(testTvSeriesDetail)).thenAnswer(
-                (_) async => Left(DatabaseFailure('Failed Removed from Watchlist')));
+                (_) async => const Left(DatabaseFailure('Failed Removed from Watchlist')));
         when(mockGetWatchListStatusTvSeries.execute(testId))
             .thenAnswer((_) async => true);
         return watchlistStatusTvSeriesBloc;

@@ -8,7 +8,7 @@ import 'package:core/domain/entities/season.dart';
 import 'package:core/domain/entities/tv_series.dart';
 import 'package:core/domain/entities/tv_series_detail.dart';
 
-final testTvSeriesModel = TvSeriesModel(
+const testTvSeriesModel = TvSeriesModel(
   posterPath: '/jIhL6mlT7AblhbHJgEoiBIOUVl1.jpg',
   popularity: 29.780826,
   id: 1399,
@@ -25,7 +25,7 @@ final testTvSeriesModel = TvSeriesModel(
   originalName: 'Game of Thrones',
 );
 
-final testTvSeries = TvSeries(
+const testTvSeries = TvSeries(
   posterPath: '/jIhL6mlT7AblhbHJgEoiBIOUVl1.jpg',
   popularity: 29.780826,
   id: 1399,
@@ -42,7 +42,7 @@ final testTvSeries = TvSeries(
   originalName: 'Game of Thrones',
 );
 
-final testTvSeriesResponse = TvSeriesDetailResponse(
+const testTvSeriesResponse = TvSeriesDetailResponse(
   backdropPath: 'backdropPath',
   firstAirDate: '2024-10-10',
   genres: [GenreModel(id: 1, name: 'Drama')],
@@ -78,7 +78,7 @@ final testTvSeriesResponse = TvSeriesDetailResponse(
   voteCount: 1200,
 );
 
-final testTvSeriesDetail = TvSeriesDetail(
+const testTvSeriesDetail = TvSeriesDetail(
   backdropPath: 'backdropPath',
   firstAirDate: '2024-10-10',
   genres: [Genre(id: 1, name: 'Drama')],
@@ -107,7 +107,7 @@ final testTvSeriesDetail = TvSeriesDetail(
   voteCount: 1200,
 );
 
-final testTvSeriesTable = TvSeriesTable(
+const testTvSeriesTable = TvSeriesTable(
   id: 1,
   name: 'name',
   posterPath: 'posterPath',
@@ -121,7 +121,7 @@ final testTvSeriesMap = {
   'name': 'name',
 };
 
-final testWatchlistTvSeries = TvSeries.watchlist(
+const testWatchlistTvSeries = TvSeries.watchlist(
   id: 1,
   name: 'name',
   posterPath: 'posterPath',

@@ -108,14 +108,14 @@ const testTvSeriesDetail = TvSeriesDetail(
   voteCount: 1200,
 );
 
-final testTvSeriesTable = TvSeriesTable(
+const testTvSeriesTable = TvSeriesTable(
   id: 1,
   name: 'name',
   posterPath: 'posterPath',
   overview: 'overview',
 );
 
-final testTvSeriesMap = {
+const testTvSeriesMap = {
   'id': 1,
   'overview': 'overview',
   'posterPath': 'posterPath',
