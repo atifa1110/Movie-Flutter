@@ -28,7 +28,7 @@ class MovieRepositoryImpl implements MovieRepository {
       return Left(ServerFailure(''));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
-    } on TlsException catch (e) {
+    } on TlsException {
       return const Left(CommonFailure('Certificated not valid'));
     }
   }
@@ -42,7 +42,7 @@ class MovieRepositoryImpl implements MovieRepository {
       return Left(ServerFailure(''));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
-    } on TlsException catch (e) {
+    } on TlsException {
       return const Left(CommonFailure('Certificated not valid'));
     }
   }
@@ -56,7 +56,7 @@ class MovieRepositoryImpl implements MovieRepository {
       return Left(ServerFailure(''));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
-    } on TlsException catch (e) {
+    } on TlsException {
       return const Left(CommonFailure('Certificated not valid'));
     }
   }
@@ -70,7 +70,7 @@ class MovieRepositoryImpl implements MovieRepository {
       return Left(ServerFailure(''));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
-    } on TlsException catch (e) {
+    } on TlsException {
       return const Left(CommonFailure('Certificated not valid'));
     }
   }
@@ -84,7 +84,7 @@ class MovieRepositoryImpl implements MovieRepository {
       return Left(ServerFailure(''));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
-    } on TlsException catch (e) {
+    } on TlsException{
       return const Left(CommonFailure('Certificated not valid'));
     }
   }
@@ -98,7 +98,7 @@ class MovieRepositoryImpl implements MovieRepository {
       return Left(ServerFailure(''));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
-    } on TlsException catch (e) {
+    } on TlsException {
       return const Left(CommonFailure('Certificated not valid'));
     }
   }
