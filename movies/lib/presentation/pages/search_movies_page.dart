@@ -6,7 +6,7 @@ import '../blocs/search/search_movies_bloc.dart';
 import '../widget/movie_card_list.dart';
 
 class SearchMoviesPage extends StatelessWidget {
-  static const ROUTE_NAME = '/search';
+  static const routeName = '/search';
 
   const SearchMoviesPage({super.key});
 
@@ -14,7 +14,7 @@ class SearchMoviesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search'),
+        title: const Text('Search'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

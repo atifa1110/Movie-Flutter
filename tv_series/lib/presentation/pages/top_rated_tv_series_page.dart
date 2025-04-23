@@ -5,7 +5,7 @@ import '../bloc/top_rated/top_rated_tv_bloc.dart';
 import '../widget/tv_series_card_list.dart';
 
 class TopRatedTvSeriesPage extends StatefulWidget {
-  static const ROUTE_NAME = '/top-rated-movie';
+  static const routeName = '/top-rated-movie';
 
   const TopRatedTvSeriesPage({super.key});
 
@@ -18,8 +18,11 @@ class _TopRatedTvSeriesPageState extends State<TopRatedTvSeriesPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        context.read<TopRatedTvSeriesBloc>().add(FetchTopRatedTvSeries()));
+    Future.microtask(() {
+      if(mounted) {
+        context.read<TopRatedTvSeriesBloc>().add(FetchTopRatedTvSeries());
+      }
+    });
   }
 
   @override

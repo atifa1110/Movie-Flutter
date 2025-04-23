@@ -8,7 +8,6 @@ import 'package:core/data/repositories/tv_series_repository_impl.dart';
 import 'package:core/domain/repositories/movie_repository.dart';
 import 'package:core/domain/repositories/tv_series_repository.dart';
 import 'package:core/utils/ssl_pinning.dart';
-import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 import 'package:movies/domain/get_movie_detail.dart';
 import 'package:movies/domain/get_now_playing_movies.dart';

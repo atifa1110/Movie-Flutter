@@ -5,7 +5,7 @@ import '../bloc/now_playing/now_playing_tv_bloc.dart';
 import '../widget/tv_series_card_list.dart';
 
 class NowPlayingTvSeriesPage extends StatefulWidget {
-  static const ROUTE_NAME = '/now-playing-tv-series';
+  static const routeName = '/now-playing-tv-series';
 
   const NowPlayingTvSeriesPage({super.key});
 
@@ -18,8 +18,11 @@ class _NowPlayingTvSeriesPageState extends State<NowPlayingTvSeriesPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        context.read<NowPlayingTvSeriesBloc>().add(FetchNowPlayingTvSeries()));
+    Future.microtask(() {
+      if (mounted) {
+        context.read<NowPlayingTvSeriesBloc>().add(FetchNowPlayingTvSeries());
+      }
+    });
   }
 
   @override

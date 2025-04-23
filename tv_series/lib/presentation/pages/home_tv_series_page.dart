@@ -13,7 +13,7 @@ import '../bloc/top_rated/top_rated_tv_bloc.dart';
 import 'now_playing_tv_series_page.dart';
 
 class HomeTvSeriesPage extends StatefulWidget {
-  static const ROUTE_NAME = '/home-tv-series';
+  static const routeName = '/home-tv-series';
 
   const HomeTvSeriesPage({super.key});
 
@@ -27,9 +27,11 @@ class _HomeTvSeriesPageState extends State<HomeTvSeriesPage> {
   void initState() {
     super.initState();
     Future.microtask(() {
-      context.read<NowPlayingTvSeriesBloc>().add(FetchNowPlayingTvSeries());
-      context.read<PopularTvSeriesBloc>().add(FetchPopularTvSeries());
-      context.read<TopRatedTvSeriesBloc>().add(FetchTopRatedTvSeries());
+      if(mounted) {
+        context.read<NowPlayingTvSeriesBloc>().add(FetchNowPlayingTvSeries());
+        context.read<PopularTvSeriesBloc>().add(FetchPopularTvSeries());
+        context.read<TopRatedTvSeriesBloc>().add(FetchTopRatedTvSeries());
+      }
     });
   }
 
@@ -41,7 +43,7 @@ class _HomeTvSeriesPageState extends State<HomeTvSeriesPage> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, SearchTvSeriesPage.ROUTE_NAME);
+              Navigator.pushNamed(context, SearchTvSeriesPage.routeName);
             },
             icon: const Icon(Icons.search),
           )
@@ -58,7 +60,7 @@ class _HomeTvSeriesPageState extends State<HomeTvSeriesPage> {
                 onTap: () {
                   Navigator.pushNamed(
                     context,
-                    NowPlayingTvSeriesPage.ROUTE_NAME,
+                    NowPlayingTvSeriesPage.routeName,
                   );
                 },
               ),
@@ -78,7 +80,7 @@ class _HomeTvSeriesPageState extends State<HomeTvSeriesPage> {
               _buildSubHeading(
                 title: 'Popular',
                 onTap: () {
-                  Navigator.pushNamed(context, PopularTvSeriesPage.ROUTE_NAME);
+                  Navigator.pushNamed(context, PopularTvSeriesPage.routeName);
                 },
               ),
               BlocBuilder<PopularTvSeriesBloc, PopularTvSeriesState>(
@@ -97,7 +99,7 @@ class _HomeTvSeriesPageState extends State<HomeTvSeriesPage> {
               _buildSubHeading(
                 title: 'Top Rated',
                 onTap: () {
-                  Navigator.pushNamed(context, TopRatedTvSeriesPage.ROUTE_NAME);
+                  Navigator.pushNamed(context, TopRatedTvSeriesPage.routeName);
                 },
               ),
               BlocBuilder<TopRatedTvSeriesBloc, TopRatedTvSeriesState>(
@@ -161,7 +163,7 @@ class TvSeriesList extends StatelessWidget {
               onTap: () {
                 Navigator.pushNamed(
                   context,
-                  TvSeriesDetailPage.ROUTE_NAME,
+                  TvSeriesDetailPage.routeName,
                   arguments: item.id,
                 );
               },

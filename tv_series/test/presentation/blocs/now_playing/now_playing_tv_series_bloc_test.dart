@@ -28,7 +28,7 @@ void main() {
   final testTvSeriesList = <TvSeries>[testTvSeries];
 
   blocTest<NowPlayingTvSeriesBloc, NowPlayingTvSeriesState>(
-    'Should emit [Loading, HasData] when data is gotten succesfully',
+    'Should emit [Loading, HasData] when data is gotten successfully',
     build: () {
       when(mockGetNowPlayingTvSeries.execute())
           .thenAnswer((_) async => Right(testTvSeriesList));

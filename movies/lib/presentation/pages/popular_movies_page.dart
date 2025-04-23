@@ -5,12 +5,12 @@ import 'package:movies/presentation/widget/movie_card_list.dart';
 import '../blocs/popular/popular_movies_bloc.dart';
 
 class PopularMoviesPage extends StatefulWidget {
-  static const ROUTE_NAME = '/popular-movie';
+  static const routeName = '/popular-movie';
 
   const PopularMoviesPage({super.key});
 
   @override
-  _PopularMoviesPageState createState() => _PopularMoviesPageState();
+  State<PopularMoviesPage> createState() => _PopularMoviesPageState();
 }
 
 class _PopularMoviesPageState extends State<PopularMoviesPage> {
@@ -18,8 +18,11 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(
-            () => context.read<PopularMoviesBloc>().add(FetchPopularMovies()));
+    Future.microtask(() {
+      if(mounted) {
+        context.read<PopularMoviesBloc>().add(FetchPopularMovies());
+      }
+    });
   }
 
   @override

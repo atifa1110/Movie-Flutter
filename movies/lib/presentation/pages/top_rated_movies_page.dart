@@ -5,12 +5,13 @@ import 'package:movies/presentation/blocs/top_rated/top_rated_movies_bloc.dart';
 import '../widget/movie_card_list.dart';
 
 class TopRatedMoviesPage extends StatefulWidget {
-  static const ROUTE_NAME = '/top-rated-movie';
+  static const routeName = '/top-rated-movie';
 
   const TopRatedMoviesPage({super.key});
 
   @override
-  _TopRatedMoviesPageState createState() => _TopRatedMoviesPageState();
+  State<TopRatedMoviesPage> createState() => _TopRatedMoviesPageState();
+
 }
 
 class _TopRatedMoviesPageState extends State<TopRatedMoviesPage> {
@@ -18,8 +19,11 @@ class _TopRatedMoviesPageState extends State<TopRatedMoviesPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(
-            () => context.read<TopRatedMoviesBloc>().add(FetchTopRatedMovies()));
+    Future.microtask(() {
+      if(mounted) {
+        context.read<TopRatedMoviesBloc>().add(FetchTopRatedMovies());
+      }
+    });
   }
 
   @override

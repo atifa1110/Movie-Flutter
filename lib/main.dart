@@ -45,10 +45,12 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -109,29 +111,29 @@ class MyApp extends StatelessWidget {
         navigatorObservers: [routeObserver],
         onGenerateRoute: (RouteSettings settings) {
           switch (settings.name) {
-            case HomeTvSeriesPage.ROUTE_NAME:
+            case HomeTvSeriesPage.routeName:
               return MaterialPageRoute(builder: (_) => const HomeTvSeriesPage());
-            case WatchlistPage.ROUTE_NAME:
+            case WatchlistPage.routeName:
               return MaterialPageRoute(builder: (_) => const WatchlistPage());
-            case PopularMoviesPage.ROUTE_NAME:
+            case PopularMoviesPage.routeName:
               return MaterialPageRoute(builder: (_) => const PopularMoviesPage());
-            case TopRatedMoviesPage.ROUTE_NAME:
+            case TopRatedMoviesPage.routeName:
               return MaterialPageRoute(builder: (_) => const TopRatedMoviesPage());
-            case MovieDetailPage.ROUTE_NAME:
+            case MovieDetailPage.routeName:
               final id = settings.arguments as int;
               return MaterialPageRoute(
                 builder: (_) => MovieDetailPage(id: id), settings: settings,);
-            case SearchMoviesPage.ROUTE_NAME:
+            case SearchMoviesPage.routeName:
               return MaterialPageRoute(builder: (_) => const SearchMoviesPage());
-            case NowPlayingTvSeriesPage.ROUTE_NAME:
+            case NowPlayingTvSeriesPage.routeName:
               return MaterialPageRoute(builder: (_) => const NowPlayingTvSeriesPage(),);
-            case PopularTvSeriesPage.ROUTE_NAME:
+            case PopularTvSeriesPage.routeName:
               return MaterialPageRoute(builder: (_) => const PopularTvSeriesPage());
-            case TopRatedTvSeriesPage.ROUTE_NAME:
+            case TopRatedTvSeriesPage.routeName:
               return MaterialPageRoute(builder: (_) => const TopRatedTvSeriesPage());
-            case SearchTvSeriesPage.ROUTE_NAME:
+            case SearchTvSeriesPage.routeName:
               return MaterialPageRoute(builder: (_) => const SearchTvSeriesPage());
-            case TvSeriesDetailPage.ROUTE_NAME:
+            case TvSeriesDetailPage.routeName:
               final id = settings.arguments as int;
               return MaterialPageRoute(
                 builder: (_) => TvSeriesDetailPage(id: id), settings: settings,);

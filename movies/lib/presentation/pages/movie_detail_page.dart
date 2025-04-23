@@ -11,7 +11,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../blocs/detail/detail_movies_bloc.dart';
 
 class MovieDetailPage extends StatefulWidget {
-  static const ROUTE_NAME = '/detail';
+  static const routeName = '/detail';
 
   final int id;
   const MovieDetailPage({super.key, required this.id});
@@ -26,8 +26,10 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
   void initState() {
     super.initState();
     Future.microtask(() {
-      context.read<DetailMovieBloc>().add(FetchDetailMovie(widget.id));
-      context.read<DetailMovieBloc>().add(LoadWatchlistStatusMovie(widget.id));
+      if(mounted) {
+        context.read<DetailMovieBloc>().add(FetchDetailMovie(widget.id));
+        context.read<DetailMovieBloc>().add(LoadWatchlistStatusMovie(widget.id));
+      }
     });
   }
 
@@ -207,7 +209,7 @@ class DetailContent extends StatelessWidget {
                                             onTap: () {
                                               Navigator.pushReplacementNamed(
                                                 context,
-                                                MovieDetailPage.ROUTE_NAME,
+                                                MovieDetailPage.routeName,
                                                 arguments: movie.id,
                                               );
                                             },

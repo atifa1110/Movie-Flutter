@@ -8,10 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../bloc/detail/detail_tv_bloc.dart';
-import '../bloc/recommendation/recommendation_tv_bloc.dart';
 
 class TvSeriesDetailPage extends StatefulWidget {
-  static const ROUTE_NAME = '/detail-tv-series';
+  static const routeName = '/detail-tv-series';
 
   final int id;
   const TvSeriesDetailPage({super.key, required this.id});
@@ -26,9 +25,12 @@ class _TvSeriesDetailPageState extends State<TvSeriesDetailPage> {
   void initState() {
     super.initState();
     Future.microtask(() {
-      final id = widget.id;
-      context.read<DetailTvSeriesBloc>().add(FetchDetailTvSeries(id));
-      context.read<DetailTvSeriesBloc>().add(LoadWatchlistStatusTvSeries(widget.id));
+      if(mounted) {
+        final id = widget.id;
+        context.read<DetailTvSeriesBloc>().add(FetchDetailTvSeries(id));
+        context.read<DetailTvSeriesBloc>().add(
+            LoadWatchlistStatusTvSeries(widget.id));
+      }
     });
   }
 
@@ -248,7 +250,7 @@ class DetailContent extends StatelessWidget {
                                             onTap: () {
                                               Navigator.pushReplacementNamed(
                                                 context,
-                                                TvSeriesDetailPage.ROUTE_NAME,
+                                                TvSeriesDetailPage.routeName,
                                                 arguments: tvSeries.id,
                                               );
                                             },

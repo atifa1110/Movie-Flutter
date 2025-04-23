@@ -3,7 +3,7 @@ import 'package:movies/presentation/pages/watchlist_movies_page.dart';
 import 'package:tv_series/presentation/pages/watchlist_tv_series_page.dart';
 
 class WatchlistPage extends StatefulWidget {
-  static const ROUTE_NAME = '/watchlist';
+  static const routeName = '/watchlist';
 
   const WatchlistPage({super.key});
 

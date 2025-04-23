@@ -197,7 +197,7 @@ void main() {
 
   group('Added To WatchlistTv Series', () {
     blocTest<DetailTvSeriesBloc, DetailTvSeriesState>(
-      'Shoud emit [WatchlistMessage, isAddedToWatchlist] when success added to watchlist',
+      'Should emit [WatchlistMessage, isAddedToWatchlist] when success added to watchlist',
       build: () {
         when(mockSaveWatchlistTvSeries.execute(testTvSeriesDetail))
             .thenAnswer((_) async => const Right('Added to Watchlist'));
@@ -265,7 +265,7 @@ void main() {
     );
 
     blocTest<DetailTvSeriesBloc, DetailTvSeriesState>(
-      'Shoud emit [WatchlistMessage] when failed removed from watchlist',
+      'Should emit [WatchlistMessage] when failed removed from watchlist',
       build: () {
         when(mockRemoveWatchlistTvSeries.execute(testTvSeriesDetail))
             .thenAnswer((_) async => Left(DatabaseFailure('Failed')));
