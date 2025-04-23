@@ -4,7 +4,7 @@ import 'package:equatable/equatable.dart';
 import '../../domain/entities/tv_series.dart';
 
 class TvSeriesModel extends Equatable {
-  TvSeriesModel({
+  const TvSeriesModel({
     required this.posterPath,
     required this.popularity,
     required this.id,

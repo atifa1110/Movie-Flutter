@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import '../../json_reader.dart';
 
 void main() {
-  final testTvSeriesModel = TvSeriesModel(
+  const testTvSeriesModel = TvSeriesModel(
     posterPath: '/path.jpg',
     popularity: 2.3,
     id: 1,
@@ -22,8 +22,8 @@ void main() {
     originalName: 'Original Name',
   );
 
-  final testTvSeriesResponseModel =
-  TvSeriesResponse(tvSeriesList: <TvSeriesModel>[testTvSeriesModel]);
+  var testTvSeriesResponseModel =
+  TvSeriesResponse(tvSeriesList: const <TvSeriesModel>[testTvSeriesModel]);
 
   group('fromJson', () {
     test('should return a valid model from JSON', () async {

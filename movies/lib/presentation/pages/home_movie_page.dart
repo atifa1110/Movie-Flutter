@@ -81,7 +81,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
             ListTile(
               key: const Key('drawer_about_tile'),
               onTap: () {
-                Navigator.pushNamed(context, AboutPage.ROUTE_NAME);
+                Navigator.pushNamed(context, AboutPage.routeName);
               },
               leading: const Icon(Icons.info_outline),
               title: const Text('About'),
