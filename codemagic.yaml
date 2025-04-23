@@ -1,0 +1,21 @@
+workflows:
+  flutter-ci:
+    name: Flutter CI
+    environment:
+      flutter: stable
+    scripts:
+      - name: Flutter dependencies
+        script: flutter pub get
+      - name: Analyze
+        script: flutter analyze
+      - name: Format
+        script: dart format --verify
+      - name: Run integration tests
+        script: flutter test integration_test
+      - name: Run unit tests (movies module)
+        script: flutter test movies/test
+    build:
+      - name: Build Android
+        script: flutter build apk --split-per-abi
+    artifacts:
+      - build/app/outputs/flutter-apk/app-*.apk
