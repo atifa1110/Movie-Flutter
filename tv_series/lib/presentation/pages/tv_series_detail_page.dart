@@ -64,11 +64,11 @@ class _TvSeriesDetailPageState extends State<TvSeriesDetailPage> {
         },
         builder: (_, state) {
           final tvDetailState = state.tvSeriesDetailState;
-          if (tvDetailState == RequestState.Loading) {
+          if (tvDetailState == RequestState.loading) {
             return const Center(
               child: CircularProgressIndicator(),
             );
-          } else if (tvDetailState == RequestState.Loaded) {
+          } else if (tvDetailState == RequestState.loaded) {
             return SafeArea(
               child: DetailContent(
                 state.tvSeriesDetail!,
@@ -76,7 +76,7 @@ class _TvSeriesDetailPageState extends State<TvSeriesDetailPage> {
                 state.isAddedToWatchlist,
               ),
             );
-          } else if (tvDetailState == RequestState.Error) {
+          } else if (tvDetailState == RequestState.error) {
             return Center(
               child: Text(state.message),
             );
@@ -233,11 +233,11 @@ class DetailContent extends StatelessWidget {
                             BlocBuilder<DetailTvSeriesBloc, DetailTvSeriesState>(
                               builder: (context, state) {
                                 final recommendationsState = state.tvSeriesRecommendationsState;
-                                if (recommendationsState == RequestState.Loading) {
+                                if (recommendationsState == RequestState.loading) {
                                   return const Center(
                                     child: CircularProgressIndicator(),
                                   );
-                                } else if (recommendationsState == RequestState.Loaded) {
+                                } else if (recommendationsState == RequestState.loaded) {
                                   return SizedBox(
                                     height: 150,
                                     child: ListView.builder(
@@ -276,9 +276,9 @@ class DetailContent extends StatelessWidget {
                                       itemCount: recommendations.length,
                                     ),
                                   );
-                                } else if (recommendationsState == RequestState.Error) {
+                                } else if (recommendationsState == RequestState.error) {
                                   return Text(state.message);
-                                } else if (recommendationsState == RequestState.Empty) {
+                                } else if (recommendationsState == RequestState.empty) {
                                   return const Text('No Recommendations');
                                 } else {
                                   return const Text('No Recommendations');

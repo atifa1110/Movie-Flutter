@@ -45,9 +45,9 @@ void main() {
           (WidgetTester tester) async {
         when(() => mockDetailMovieBloc.state).thenReturn(
           DetailMovieState.initial().copyWith(
-            movieDetailState: RequestState.Loaded,
+            movieDetailState: RequestState.loaded,
             movieDetail: testMovieDetail,
-            movieRecommendationsState: RequestState.Loaded,
+            movieRecommendationsState: RequestState.loaded,
             movieRecommendations: <Movie>[],
             isAddedToWatchlist: false,
           ),
@@ -69,9 +69,9 @@ void main() {
           (WidgetTester tester) async {
         when(() => mockDetailMovieBloc.state).thenReturn(
           DetailMovieState.initial().copyWith(
-            movieDetailState: RequestState.Loaded,
+            movieDetailState: RequestState.loaded,
             movieDetail: testMovieDetail,
-            movieRecommendationsState: RequestState.Loaded,
+            movieRecommendationsState: RequestState.loaded,
             movieRecommendations: [testMovie],
             isAddedToWatchlist: true,
           ),
@@ -153,7 +153,7 @@ void main() {
           (WidgetTester tester) async {
         when(() => mockDetailMovieBloc.state).thenReturn(
           DetailMovieState.initial().copyWith(
-            movieDetailState: RequestState.Error,
+            movieDetailState: RequestState.error,
             message: 'Failed to connect to the network',
           ),
         );
@@ -171,9 +171,9 @@ void main() {
           (WidgetTester tester) async {
         when(() => mockDetailMovieBloc.state).thenReturn(
           DetailMovieState.initial().copyWith(
-            movieDetailState: RequestState.Loaded,
+            movieDetailState: RequestState.loaded,
             movieDetail: testMovieDetail,
-            movieRecommendationsState: RequestState.Empty,
+            movieRecommendationsState: RequestState.empty,
             isAddedToWatchlist: false,
           ),
         );
@@ -191,9 +191,9 @@ void main() {
           (WidgetTester tester) async {
         when(() => mockDetailMovieBloc.state).thenReturn(
           DetailMovieState.initial().copyWith(
-            movieDetailState: RequestState.Loaded,
+            movieDetailState: RequestState.loaded,
             movieDetail: testMovieDetail,
-            movieRecommendationsState: RequestState.Error,
+            movieRecommendationsState: RequestState.error,
             message: 'Error',
             isAddedToWatchlist: false,
           ),

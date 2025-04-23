@@ -44,9 +44,9 @@ void main() {
           (WidgetTester tester) async {
         when(() => mockDetailTvSeriesBLoc.state).thenReturn(
           DetailTvSeriesState.initial().copyWith(
-            tvSeriesDetailState: RequestState.Loaded,
+            tvSeriesDetailState: RequestState.loaded,
             tvSeriesDetail: testTvSeriesDetail,
-            tvSeriesRecommendationsState: RequestState.Loaded,
+            tvSeriesRecommendationsState: RequestState.loaded,
             tvSeriesRecommendations: <TvSeries>[],
             isAddedToWatchlist: false,
           ),
@@ -68,9 +68,9 @@ void main() {
           (WidgetTester tester) async {
         when(() => mockDetailTvSeriesBLoc.state).thenReturn(
           DetailTvSeriesState.initial().copyWith(
-            tvSeriesDetailState: RequestState.Loaded,
+            tvSeriesDetailState: RequestState.loaded,
             tvSeriesDetail: testTvSeriesDetail,
-            tvSeriesRecommendationsState: RequestState.Loaded,
+            tvSeriesRecommendationsState: RequestState.loaded,
             tvSeriesRecommendations: [testTvSeries],
             isAddedToWatchlist: true,
           ),
@@ -152,7 +152,7 @@ void main() {
           (WidgetTester tester) async {
         when(() => mockDetailTvSeriesBLoc.state).thenReturn(
           DetailTvSeriesState.initial().copyWith(
-            tvSeriesDetailState: RequestState.Error,
+            tvSeriesDetailState: RequestState.error,
             message: 'Failed to connect to the network',
           ),
         );

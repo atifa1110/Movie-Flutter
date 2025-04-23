@@ -56,9 +56,9 @@ class DetailMovieState extends Equatable {
   factory DetailMovieState.initial() {
     return const DetailMovieState(
       movieDetail: null,
-      movieDetailState: RequestState.Empty,
+      movieDetailState: RequestState.empty,
       movieRecommendations: [],
-      movieRecommendationsState: RequestState.Empty,
+      movieRecommendationsState: RequestState.empty,
       message: '',
       watchlistMessage: '',
       isAddedToWatchlist: false,

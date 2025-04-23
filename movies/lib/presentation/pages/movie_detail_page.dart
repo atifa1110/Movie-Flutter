@@ -63,11 +63,11 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
         },
         builder: (_, state) {
           final movieDetailState = state.movieDetailState;
-          if (movieDetailState == RequestState.Loading) {
+          if (movieDetailState == RequestState.loading) {
             return const Center(
               child: CircularProgressIndicator(),
             );
-          } else if (movieDetailState == RequestState.Loaded) {
+          } else if (movieDetailState == RequestState.loaded) {
             return SafeArea(
               child: DetailContent(
                 state.movieDetail!,
@@ -75,7 +75,7 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
                 state.isAddedToWatchlist,
               ),
             );
-          } else if (movieDetailState == RequestState.Error) {
+          } else if (movieDetailState == RequestState.error) {
             return Center(
               child: Text(state.message),
             );
@@ -192,11 +192,11 @@ class DetailContent extends StatelessWidget {
                             BlocBuilder<DetailMovieBloc, DetailMovieState>(
                               builder: (context, state) {
                                 final recommendationsState = state.movieRecommendationsState;
-                                if (recommendationsState == RequestState.Loading) {
+                                if (recommendationsState == RequestState.loading) {
                                   return const Center(
                                     child: CircularProgressIndicator(),
                                   );
-                                } else if (recommendationsState == RequestState.Loaded) {
+                                } else if (recommendationsState == RequestState.loaded) {
                                   return SizedBox(
                                     height: 150,
                                     child: ListView.builder(
@@ -235,7 +235,7 @@ class DetailContent extends StatelessWidget {
                                       itemCount: recommendations.length,
                                     ),
                                   );
-                                } else if (recommendationsState == RequestState.Error) {
+                                } else if (recommendationsState == RequestState.error) {
                                   return Text(state.message);
                                 } else {
                                   return const Text('No Recommendations');

@@ -30,7 +30,7 @@ class DetailMovieBloc extends Bloc<DetailMovieEvent, DetailMovieState> {
     required this.getWatchListStatusMovie,
   }) : super(DetailMovieState.initial()) {
     on<FetchDetailMovie>((event, emit) async {
-      emit(state.copyWith(movieDetailState: RequestState.Loading));
+      emit(state.copyWith(movieDetailState: RequestState.loading));
 
       final id = event.id;
 
@@ -40,36 +40,36 @@ class DetailMovieBloc extends Bloc<DetailMovieEvent, DetailMovieState> {
       detailMovieResult.fold(
             (failure) => emit(
           state.copyWith(
-            movieDetailState: RequestState.Error,
+            movieDetailState: RequestState.error,
             message: failure.message,
           ),
         ),
             (movieDetail) {
           emit(
             state.copyWith(
-              movieRecommendationsState: RequestState.Loading,
-              movieDetailState: RequestState.Loaded,
+              movieRecommendationsState: RequestState.loading,
+              movieDetailState: RequestState.loaded,
               movieDetail: movieDetail,
             ),
           );
           recommendationMoviesResult.fold(
                 (failure) => emit(
               state.copyWith(
-                movieRecommendationsState: RequestState.Error,
-                message: failure.message,
+                movieRecommendationsState: RequestState.error,
+                message: failure.message
               ),
             ),
                 (movieRecommendations) {
               if (movieRecommendations.isEmpty) {
                 emit(
                   state.copyWith(
-                    movieRecommendationsState: RequestState.Empty,
+                    movieRecommendationsState: RequestState.empty,
                   ),
                 );
               } else {
                 emit(
                   state.copyWith(
-                    movieRecommendationsState: RequestState.Loaded,
+                    movieRecommendationsState: RequestState.loaded,
                     movieRecommendations: movieRecommendations,
                   ),
                 );

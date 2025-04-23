@@ -60,17 +60,17 @@ void main() {
       act: (bloc) => bloc.add(FetchDetailMovie(tId)),
       expect: () => [
         DetailMovieState.initial().copyWith(
-          movieDetailState: RequestState.Loading,
+          movieDetailState: RequestState.loading,
         ),
         DetailMovieState.initial().copyWith(
-          movieRecommendationsState: RequestState.Loading,
-          movieDetailState: RequestState.Loaded,
+          movieRecommendationsState: RequestState.loading,
+          movieDetailState: RequestState.loaded,
           movieDetail: testMovieDetail,
         ),
         DetailMovieState.initial().copyWith(
-          movieDetailState: RequestState.Loaded,
+          movieDetailState: RequestState.loaded,
           movieDetail: testMovieDetail,
-          movieRecommendationsState: RequestState.Loaded,
+          movieRecommendationsState: RequestState.loaded,
           movieRecommendations: testMovieList,
         ),
       ],
@@ -81,10 +81,10 @@ void main() {
     );
 
     blocTest<DetailMovieBloc, DetailMovieState>(
-      'Shoud emit [DetailMovieError] when get detail movie failed',
+      'Should emit [DetailMovieError] when get detail movie failed',
       build: () {
         when(mockGetDetailMovie.execute(tId))
-            .thenAnswer((_) async => Left(ConnectionFailure('Failed')));
+            .thenAnswer((_) async => const Left(ConnectionFailure('Failed')));
         when(mockGetRecommendationMovies.execute(tId))
             .thenAnswer((_) async => Right(testMovieList));
         return detailMovieBloc;
@@ -92,10 +92,10 @@ void main() {
       act: (bloc) => bloc.add(FetchDetailMovie(tId)),
       expect: () => [
         DetailMovieState.initial().copyWith(
-          movieDetailState: RequestState.Loading,
+          movieDetailState: RequestState.loading,
         ),
         DetailMovieState.initial().copyWith(
-          movieDetailState: RequestState.Error,
+          movieDetailState: RequestState.error,
           message: 'Failed',
         ),
       ],
@@ -117,17 +117,17 @@ void main() {
       act: (bloc) => bloc.add(FetchDetailMovie(tId)),
       expect: () => [
         DetailMovieState.initial().copyWith(
-          movieDetailState: RequestState.Loading,
+          movieDetailState: RequestState.loading,
         ),
         DetailMovieState.initial().copyWith(
-          movieRecommendationsState: RequestState.Loading,
-          movieDetailState: RequestState.Loaded,
+          movieRecommendationsState: RequestState.loading,
+          movieDetailState: RequestState.loaded,
           movieDetail: testMovieDetail,
         ),
         DetailMovieState.initial().copyWith(
-          movieDetailState: RequestState.Loaded,
+          movieDetailState: RequestState.loaded,
           movieDetail: testMovieDetail,
-          movieRecommendationsState: RequestState.Empty,
+          movieRecommendationsState: RequestState.empty,
         ),
       ],
       verify: (_) {
@@ -142,23 +142,23 @@ void main() {
         when(mockGetDetailMovie.execute(tId))
             .thenAnswer((_) async => Right(testMovieDetail));
         when(mockGetRecommendationMovies.execute(tId))
-            .thenAnswer((_) async => Left(ConnectionFailure('Failed')));
+            .thenAnswer((_) async => const Left(ConnectionFailure('Failed')));
         return detailMovieBloc;
       },
       act: (bloc) => bloc.add(FetchDetailMovie(tId)),
       expect: () => [
         DetailMovieState.initial().copyWith(
-          movieDetailState: RequestState.Loading,
+          movieDetailState: RequestState.loading,
         ),
         DetailMovieState.initial().copyWith(
-          movieRecommendationsState: RequestState.Loading,
-          movieDetailState: RequestState.Loaded,
+          movieRecommendationsState: RequestState.loading,
+          movieDetailState: RequestState.loaded,
           movieDetail: testMovieDetail,
         ),
         DetailMovieState.initial().copyWith(
-          movieDetailState: RequestState.Loaded,
+          movieDetailState: RequestState.loaded,
           movieDetail: testMovieDetail,
-          movieRecommendationsState: RequestState.Error,
+          movieRecommendationsState: RequestState.error,
           message: 'Failed',
         ),
       ],
@@ -229,7 +229,7 @@ void main() {
       'Should emit [WatchlistMessage] when failed added to watchlist',
       build: () {
         when(mockSaveWatchlistMovie.execute(testMovieDetail))
-            .thenAnswer((_) async => Left(DatabaseFailure('Failed')));
+            .thenAnswer((_) async => const Left(DatabaseFailure('Failed')));
         when(mockGetWatchListStatusMovie.execute(testMovieDetail.id))
             .thenAnswer((_) async => false);
         return detailMovieBloc;
@@ -272,7 +272,7 @@ void main() {
       'Should emit [WatchlistMessage] when failed removed from watchlist',
       build: () {
         when(mockRemoveWatchlistMovie.execute(testMovieDetail))
-            .thenAnswer((_) async => Left(DatabaseFailure('Failed')));
+            .thenAnswer((_) async => const Left(DatabaseFailure('Failed')));
         when(mockGetWatchListStatusMovie.execute(testMovieDetail.id))
             .thenAnswer((_) async => false);
         return detailMovieBloc;

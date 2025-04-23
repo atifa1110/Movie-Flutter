@@ -30,7 +30,7 @@ class DetailTvSeriesBloc extends Bloc<DetailTvSeriesEvent, DetailTvSeriesState> 
     required this.getWatchListStatusTvSeries,
   }) : super(DetailTvSeriesState.initial()) {
     on<FetchDetailTvSeries>((event, emit) async {
-      emit(state.copyWith(tvSeriesDetailState: RequestState.Loading));
+      emit(state.copyWith(tvSeriesDetailState: RequestState.loading));
 
       final id = event.id;
 
@@ -40,22 +40,22 @@ class DetailTvSeriesBloc extends Bloc<DetailTvSeriesEvent, DetailTvSeriesState> 
       detailTvSeriesResult.fold(
             (failure) => emit(
           state.copyWith(
-            tvSeriesDetailState: RequestState.Error,
+            tvSeriesDetailState: RequestState.error,
             message: failure.message,
           ),
         ),
             (tvSeriesDetail) {
           emit(
             state.copyWith(
-              tvSeriesRecommendationsState: RequestState.Loading,
-              tvSeriesDetailState: RequestState.Loaded,
+              tvSeriesRecommendationsState: RequestState.loading,
+              tvSeriesDetailState: RequestState.loaded,
               tvSeriesDetail: tvSeriesDetail,
             ),
           );
           recommendationTvSeriesResult.fold(
                 (failure) => emit(
               state.copyWith(
-                tvSeriesRecommendationsState: RequestState.Error,
+                tvSeriesRecommendationsState: RequestState.error,
                 message: failure.message,
               ),
             ),
@@ -63,13 +63,13 @@ class DetailTvSeriesBloc extends Bloc<DetailTvSeriesEvent, DetailTvSeriesState> 
               if (tvSeriesRecommendations.isEmpty) {
                 emit(
                   state.copyWith(
-                    tvSeriesRecommendationsState: RequestState.Empty,
+                    tvSeriesRecommendationsState: RequestState.empty,
                   ),
                 );
               } else {
                 emit(
                   state.copyWith(
-                    tvSeriesRecommendationsState: RequestState.Loaded,
+                    tvSeriesRecommendationsState: RequestState.loaded,
                     tvSeriesRecommendations: tvSeriesRecommendations,
                   ),
                 );

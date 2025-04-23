@@ -61,17 +61,17 @@ void main() {
       act: (bloc) => bloc.add(FetchDetailTvSeries(tId)),
       expect: () => [
         DetailTvSeriesState.initial().copyWith(
-          tvSeriesDetailState: RequestState.Loading,
+          tvSeriesDetailState: RequestState.loading,
         ),
         DetailTvSeriesState.initial().copyWith(
-          tvSeriesRecommendationsState: RequestState.Loading,
-          tvSeriesDetailState: RequestState.Loaded,
+          tvSeriesRecommendationsState: RequestState.loading,
+          tvSeriesDetailState: RequestState.loaded,
           tvSeriesDetail: testTvSeriesDetail,
         ),
         DetailTvSeriesState.initial().copyWith(
-          tvSeriesDetailState: RequestState.Loaded,
+          tvSeriesDetailState: RequestState.loaded,
           tvSeriesDetail: testTvSeriesDetail,
-          tvSeriesRecommendationsState: RequestState.Loaded,
+          tvSeriesRecommendationsState: RequestState.loaded,
           tvSeriesRecommendations: testTvSeriesList,
         ),
       ],
@@ -85,7 +85,7 @@ void main() {
       'Should emit [DetailTvError] when get detail tv failed',
       build: () {
         when(mockGetDetailTvSeries.execute(tId))
-            .thenAnswer((_) async => Left(ConnectionFailure('Failed')));
+            .thenAnswer((_) async => const Left(ConnectionFailure('Failed')));
         when(mockGetRecommendationTvSeries.execute(tId))
             .thenAnswer((_) async => Right(testTvSeriesList));
         return detailTvSeriesBloc;
@@ -93,10 +93,10 @@ void main() {
       act: (bloc) => bloc.add(FetchDetailTvSeries(tId)),
       expect: () => [
         DetailTvSeriesState.initial().copyWith(
-          tvSeriesDetailState: RequestState.Loading,
+          tvSeriesDetailState: RequestState.loading,
         ),
         DetailTvSeriesState.initial().copyWith(
-          tvSeriesDetailState: RequestState.Error,
+          tvSeriesDetailState: RequestState.error,
           message: 'Failed',
         ),
       ],
@@ -118,11 +118,11 @@ void main() {
       act: (bloc) => bloc.add(FetchDetailTvSeries(tId)),
       expect: () => [
         DetailTvSeriesState.initial().copyWith(
-          tvSeriesDetailState: RequestState.Loading,
+          tvSeriesDetailState: RequestState.loading,
         ),
         DetailTvSeriesState.initial().copyWith(
-          tvSeriesRecommendationsState: RequestState.Loading,
-          tvSeriesDetailState: RequestState.Loaded,
+          tvSeriesRecommendationsState: RequestState.loading,
+          tvSeriesDetailState: RequestState.loaded,
           tvSeriesDetail: testTvSeriesDetail,
         ),
       ],
@@ -138,23 +138,23 @@ void main() {
         when(mockGetDetailTvSeries.execute(tId))
             .thenAnswer((_) async => Right(testTvSeriesDetail));
         when(mockGetRecommendationTvSeries.execute(tId))
-            .thenAnswer((_) async => Left(ConnectionFailure('Failed')));
+            .thenAnswer((_) async => const Left(ConnectionFailure('Failed')));
         return detailTvSeriesBloc;
       },
       act: (bloc) => bloc.add(FetchDetailTvSeries(tId)),
       expect: () => [
         DetailTvSeriesState.initial().copyWith(
-          tvSeriesDetailState: RequestState.Loading,
+          tvSeriesDetailState: RequestState.loading,
         ),
         DetailTvSeriesState.initial().copyWith(
-          tvSeriesRecommendationsState: RequestState.Loading,
-          tvSeriesDetailState: RequestState.Loaded,
+          tvSeriesRecommendationsState: RequestState.loading,
+          tvSeriesDetailState: RequestState.loaded,
           tvSeriesDetail: testTvSeriesDetail,
         ),
         DetailTvSeriesState.initial().copyWith(
-          tvSeriesDetailState: RequestState.Loaded,
+          tvSeriesDetailState: RequestState.loaded,
           tvSeriesDetail: testTvSeriesDetail,
-          tvSeriesRecommendationsState: RequestState.Error,
+          tvSeriesRecommendationsState: RequestState.error,
           message: 'Failed',
         ),
       ],
@@ -225,7 +225,7 @@ void main() {
       'Shou;d emit [WatchlistMessage] when failed added to watchlist',
       build: () {
         when(mockSaveWatchlistTvSeries.execute(testTvSeriesDetail))
-            .thenAnswer((_) async => Left(DatabaseFailure('Failed')));
+            .thenAnswer((_) async => const Left(DatabaseFailure('Failed')));
         when(mockGetWatchListStatusTvSeries.execute(testTvSeriesDetail.id))
             .thenAnswer((_) async => false);
         return detailTvSeriesBloc;
@@ -268,7 +268,7 @@ void main() {
       'Should emit [WatchlistMessage] when failed removed from watchlist',
       build: () {
         when(mockRemoveWatchlistTvSeries.execute(testTvSeriesDetail))
-            .thenAnswer((_) async => Left(DatabaseFailure('Failed')));
+            .thenAnswer((_) async => const Left(DatabaseFailure('Failed')));
         when(mockGetWatchListStatusTvSeries.execute(testTvSeriesDetail.id))
             .thenAnswer((_) async => false);
         return detailTvSeriesBloc;
