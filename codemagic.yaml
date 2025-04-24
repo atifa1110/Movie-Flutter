@@ -10,9 +10,14 @@ workflows:
         script: flutter clean
       - name: Analyze
         script: flutter analyze
-      - name: Run integration tests
-        script: flutter test integration_test
+      - name: Run unit tests (core module)
+        script: flutter test core/test
       - name: Run unit tests (movies module)
         script: flutter test movies/test
+      - name: Run unit tests (tv series module)
+        script: flutter test tv_series/test
+      - name: Run integration tests
+        script: flutter test integration_test
+
     artifacts:
       - build/app/outputs/flutter-apk/app-*.apk
