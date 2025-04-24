@@ -21,7 +21,7 @@ workflows:
       - name: Run unit tests (tv series module)
         script: flutter test tv_series/test
       - name: Run Integration test
-        script: flutter test integration_test -d macos
+        script: flutter test integration_test -d emulator-5556
       - name: Build APK with Flutter
         script: flutter build apk --debug
 
