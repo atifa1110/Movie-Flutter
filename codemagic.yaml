@@ -11,6 +11,8 @@ workflows:
           source: true
     environment:
       flutter: stable
+      xcode: latest
+      cocoapods: default
     scripts:
       - name: Get dependencies
         script: flutter pub get
@@ -31,6 +33,7 @@ workflows:
         script: flutter test integration_test -d "iPhone 15 Pro Max"
       - name: Build APK with Flutter
         script: flutter build apk --debug
-
+      - name: Build AAB with flutter
+        script: flutter build appbundle
     artifacts:
       - build/app/outputs/flutter-apk/app-*.apk
