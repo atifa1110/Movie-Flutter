@@ -11,7 +11,10 @@ workflows:
       - name: Analyze
         script: flutter analyze
       - name: Run unit tests (core module)
-        script: flutter test core/test
+        script: |                  
+          cd core
+          flutter pub get
+          flutter test
       - name: Run unit tests (movies module)
         script: flutter test movies/test
       - name: Run unit tests (tv series module)
