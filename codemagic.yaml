@@ -4,8 +4,10 @@ workflows:
     environment:
       flutter: stable
     scripts:
-      - name: Flutter dependencies
+      - name: Get dependencies
         script: flutter pub get
+      - name: Clean Flutter Cache
+        script: flutter clean
       - name: Analyze
         script: flutter analyze
       - name: Format
