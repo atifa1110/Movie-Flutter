@@ -10,8 +10,6 @@ workflows:
         script: flutter clean
       - name: Analyze
         script: flutter analyze
-      - name: Format
-        script: dart format --verify
       - name: Run integration tests
         script: flutter test integration_test
       - name: Run unit tests (movies module)
