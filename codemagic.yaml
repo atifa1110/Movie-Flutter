@@ -11,7 +11,7 @@ workflows:
       - name: Analyze
         script: flutter analyze
       - name: Run integration tests
-        script: flutter test integration_test
+        script: flutter test integration_test --platform android
       - name: Run unit tests (movies module)
         script: flutter test movies/test
     artifacts:
