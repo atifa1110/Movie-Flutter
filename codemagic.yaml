@@ -11,29 +11,17 @@ workflows:
         script: flutter clean
       - name: Analyze
         script: flutter analyze
-
-      - name: Start Android Emulator
-        script: |
-            echo "Starting Android Emulator"
-            # Perintah untuk memulai emulator Android di Codemagic.
-            # Ini bisa bervariasi tergantung pada konfigurasi Codemagic Anda.
-            # Contoh (mungkin perlu disesuaikan):
-            # emulator -avd <nama_avd> -no-window &
-            # adb wait-for-device
-            # flutter emulators --launch <nama_avd> # Jika menggunakan flutter emulators
-
-      - name: Get Android Emulator ID
-        script: |
-          echo "Getting Android Emulator ID"
-          # Perintah untuk mendapatkan ID emulator yang sedang berjalan.
-          # ID biasanya seperti 'emulator-5554'.
-          # Anda mungkin perlu menyesuaikan perintah ini.
-          EMULATOR_ID=$(adb devices | grep emulator | awk '{print $1}')
-          echo "Emulator ID: $EMULATOR_ID"
-          export ANDROID_DEVICE_ID=$EMULATOR_ID
-
+      - name: Run unit tests (core module)
+        script: |                  
+          cd core
+          flutter pub get
+          flutter test
+      - name: Run unit tests (movies module)
+        script: flutter test movies/test
+      - name: Run unit tests (tv series module)
+        script: flutter test tv_series/test
       - name: Run Integration test
-        script: flutter test integration_test
+        script: flutter test integration_test -d macos
       - name: Build APK with Flutter
         script: flutter build apk --debug
 
