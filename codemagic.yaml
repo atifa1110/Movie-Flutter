@@ -20,12 +20,10 @@ workflows:
         script: flutter test movies/test
       - name: Run unit tests (tv series module)
         script: flutter test tv_series/test
-      - name: Create debug and test APK
-        script: |
-            set -ex
-            cd android
-            ./gradlew app:assembleAndroidTest
-            ./gradlew app:assembleDebug -Ptarget="$CM_BUILD_DIR/integration_test/app_test.dart"
+      - name: Run Integration test
+        script: flutter test integration_test
+      - name: Build APK with Flutter
+        script: flutter build apk --debug
 
     artifacts:
       - build/app/outputs/flutter-apk/app-*.apk
