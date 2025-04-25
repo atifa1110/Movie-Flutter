@@ -57,13 +57,23 @@ workflows:
               -a tv_series/coverage/lcov.info \
               -o coverage/merged_lcov.info
 
+      - name: Generate HTML Report (Debug)
+        script: "$(brew --prefix lcov)/bin/genhtml --help"
       - name: Generate HTML Report
         script: |
             #!/bin/bash
+            cd $(pwd) # Ensure we are at the root of the repository
             $(brew --prefix lcov)/bin/genhtml \
-              --base-directory $(pwd) \
               coverage/merged_lcov.info \
               -o coverage/merged_html
+
+#      - name: Generate HTML Report
+#        script: |
+#            #!/bin/bash
+#            $(brew --prefix lcov)/bin/genhtml \
+#              --base-directory $(pwd) \
+#              coverage/merged_lcov.info \
+#              -o coverage/merged_html
 
       - name: Upload Coverage to Codecov
         script: |
