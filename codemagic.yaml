@@ -44,18 +44,33 @@ workflows:
           ./gradlew app:assembleAndroidTest  
           ./gradlew app:assembleDebug -Ptarget=integration_test/app_test.dart
 
-      - name: Run tests with coverage
-        script: flutter test --coverage
+      - name: Run tests with coverage - Core Module
+        script: cd core && flutter test --coverage -o coverage/lcov.info
 
-      - name: Upload coverage to Codecov (Contoh)
-        script: |
-          curl -s https://codecov.io/bash
-          bash <(curl -s https://codecov.io/bash) -f ./coverage/lcov.info -n "Flutter CI"
+      - name: Run tests with coverage - Movies Module
+        script: cd movies && flutter test --coverage -o coverage/lcov.info
 
-      - name: Upload coverage to Coveralls (Contoh)
+      - name: Run tests with coverage - TV Series Module
+        script: cd tv_series && flutter test --coverage -o coverage/lcov.info
+
+      - name: Combine Coverage Reports
         script: |
-          gem install coveralls-lcov
-          coveralls-lcov ./coverage/lcov.info
+          sudo apt update
+          sudo apt install -y lcov
+          mkdir -p coverage
+          lcov \
+            -a core/coverage/lcov.info \
+            -a movies/coverage/lcov.info \
+            -a tv_series/coverage/lcov.info \
+            -o coverage/merged_lcov.info
+
+      - name: Generate HTML Report
+        script: genhtml coverage/merged_lcov.info -o coverage/merged_html
+
+      - name: Upload Coverage to Codecov (Contoh dengan file gabungan)
+        script: |
+            curl -s https://codecov.io/bash
+            bash <(curl -s https://codecov.io/bash) -f ./coverage/merged_lcov.info -n "Flutter CI (Merged)"
 
     artifacts:
       - build/app/outputs/flutter-apk/app-*.apk
