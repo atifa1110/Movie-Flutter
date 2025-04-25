@@ -54,17 +54,11 @@ workflows:
         script: |
           ls -l ./movies/coverage/
 
-      - name: Upload Coverage to Codecov (Movies Only)
+      - name: Codecov upload
         script: |
-          #!/bin/bash
-          cd $(pwd)
-          curl -s https://codecov.io/bash
-          bash <(curl -s https://codecov.io/bash) \
-            -t "$CODECOV_TOKEN" \
-            -f ./movies/coverage/lcov.info \
-            -n "Flutter CI (Movies Only)" \
-            -r "atifa1110/Movie-Flutter" \
-            -b "submission_2"
+          curl -Os https://uploader.codecov.io/latest/macos/codecov
+          chmod +x codecov
+          ./codecov -t "${CODECOV_TOKEN}" -f ./movies/coverage/lcov.info -r "atifa1110/Movie-Flutter" -b "submission_2"
 
 #      - name: Install lcov
 #        script: brew update && brew install lcov
