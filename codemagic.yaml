@@ -16,25 +16,46 @@ workflows:
     scripts:
       - name: Get dependencies
         script: flutter pub get
+
       - name: Clean Flutter Cache
         script: flutter clean
+
       - name: Analyze
         script: flutter analyze
+
       - name: Run unit tests (core module)
         script: |                  
           cd core
           flutter pub get
           flutter test
+
       - name: Run unit tests (movies module)
         script: flutter test movies/test
+
       - name: Run unit tests (tv series module)
         script: flutter test tv_series/test
+
       - name: Build APK with Flutter
         script: flutter build apk --debug
+
       - name: Create Debug and Test APK
         script: |
           cd android  
           ./gradlew app:assembleAndroidTest  
           ./gradlew app:assembleDebug -Ptarget=integration_test/app_test.dart
+
+      - name: Run tests with coverage
+        script: flutter test --coverage
+
+      - name: Upload coverage to Codecov (Contoh)
+        script: |
+          curl -s https://codecov.io/bash
+          bash <(curl -s https://codecov.io/bash) -f ./coverage/lcov.info -n "Flutter CI"
+
+      - name: Upload coverage to Coveralls (Contoh)
+        script: |
+          gem install coveralls-lcov
+          coveralls-lcov ./coverage/lcov.info
+
     artifacts:
       - build/app/outputs/flutter-apk/app-*.apk
