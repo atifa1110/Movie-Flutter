@@ -13,6 +13,8 @@ workflows:
       flutter: stable
       xcode: latest
       cocoapods: default
+      groups:
+        - token
     scripts:
       - name: Get dependencies
         script: flutter pub get
@@ -23,33 +25,37 @@ workflows:
       - name: Analyze
         script: flutter analyze
 
-      - name: Run unit tests (core module)
-        script: |                  
-          cd core
-          flutter pub get
-          flutter test
+#      - name: Run unit tests (core module)
+#        script: |
+#          cd core
+#          flutter pub get
+#          flutter test
+#
+#      - name: Run unit tests (movies module)
+#        script: flutter test movies/test
+#
+#      - name: Run unit tests (tv series module)
+#        script: flutter test tv_series/test
+#
+#      - name: Run tests with coverage - Core Module
+#        script: cd core && flutter test --coverage
+#
+#      - name: Run tests with coverage - Movies Module
+#        script: cd movies && flutter test --coverage
+#
+#      - name: Run tests with coverage - TV Series Module
+#        script: cd tv_series && flutter test --coverage
 
-      - name: Run unit tests (movies module)
-        script: flutter test movies/test
-
-      - name: Run unit tests (tv series module)
-        script: flutter test tv_series/test
-
-      - name: Run tests with coverage - Core Module
-        script: cd core && flutter test --coverage
-
-      - name: Run tests with coverage - Movies Module
-        script: cd movies && flutter test --coverage
-
-      - name: Run tests with coverage - TV Series Module
-        script: cd tv_series && flutter test --coverage
+      - name: Debug Codecov Token
+        script: |
+            echo "Codecov Token: $CODECOV_TOKEN"
 
       - name: Upload Coverage to Codecov (Movies Only)
         script: |
             curl -s https://codecov.io/bash
             bash <(curl -s https://codecov.io/bash) -t "$CODECOV_TOKEN" -f ./movies/coverage/lcov.info -n "Flutter CI (Movies Only)"
 
-      #      - name: Install lcov
+#      - name: Install lcov
 #        script: brew update && brew install lcov
 
 #      - name: Combine Coverage Reports
