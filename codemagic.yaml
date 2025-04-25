@@ -50,6 +50,10 @@ workflows:
         script: |
             echo "Codecov Token: $CODECOV_TOKEN"
 
+      - name: Debug - List Coverage Files
+        script: |
+          ls -l ./movies/coverage/
+
       - name: Upload Coverage to Codecov (Movies Only)
         script: |
             curl -s https://codecov.io/bash
