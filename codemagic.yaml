@@ -49,18 +49,18 @@ workflows:
 
       - name: Combine Coverage Reports
         script: |
-          #!/bin/bash
-          mkdir -p coverage
-          /opt/homebrew/Cellar/lcov/$(brew --prefix lcov)/bin/lcov \
-          -a core/coverage/lcov.info \
-          -a movies/coverage/lcov.info \
-          -a tv_series/coverage/lcov.info \
-          -o coverage/merged_lcov.info
+            #!/bin/bash
+            mkdir -p coverage
+            $(brew --prefix lcov)/bin/lcov \
+              -a core/coverage/lcov.info \
+              -a movies/coverage/lcov.info \
+              -a tv_series/coverage/lcov.info \
+              -o coverage/merged_lcov.info
 
       - name: Generate HTML Report
         script: genhtml coverage/merged_lcov.info -o coverage/merged_html
 
-      - name: Upload Coverage to Codecov (Contoh dengan file gabungan)
+      - name: Upload Coverage to Codecov
         script: |
           curl -s https://codecov.io/bash
           bash <(curl -s https://codecov.io/bash) -f ./coverage/merged_lcov.info -n "Flutter CI (Merged)"
