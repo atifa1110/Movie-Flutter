@@ -35,6 +35,6 @@ workflows:
         script: |
           cd android  
           ./gradlew app:assembleAndroidTest  
-          ./gradlew app:assembleDebug -Ptarget=integration_tests/app_test.dart
+          ./gradlew app:assembleDebug -Ptarget=integration_test/app_test.dart
     artifacts:
       - build/app/outputs/flutter-apk/app-*.apk
