@@ -29,9 +29,12 @@ workflows:
         script: flutter test movies/test
       - name: Run unit tests (tv series module)
         script: flutter test tv_series/test
-      - name: Run Integration Tests
-        script: flutter drive --target=integration_test/app_test.dart
       - name: Build APK with Flutter
         script: flutter build apk --debug
+      - name: Create Debug and Test APK
+        script: |
+          cd android  
+          ./gradlew app:assembleAndroidTest  
+          ./gradlew app:assembleDebug -Ptarget=integration_tests/app_test.dart
     artifacts:
       - build/app/outputs/flutter-apk/app-*.apk
