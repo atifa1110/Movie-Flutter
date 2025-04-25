@@ -44,23 +44,28 @@ workflows:
       - name: Run tests with coverage - TV Series Module
         script: cd tv_series && flutter test --coverage
 
-      - name: Install lcov
-        script: brew update && brew install lcov
-
-      - name: Combine Coverage Reports
+      - name: Upload Coverage to Codecov (Movies Only)
         script: |
-            #!/bin/bash
-            mkdir -p coverage
-            $(brew --prefix lcov)/bin/lcov \
-              -a core/coverage/lcov.info \
-              -a movies/coverage/lcov.info \
-              -a tv_series/coverage/lcov.info \
-              -o coverage/merged_lcov.info
+            curl -s https://codecov.io/bash
+            bash <(curl -s https://codecov.io/bash) -t "$CODECOV_TOKEN" -f ./movies/coverage/lcov.info -n "Flutter CI (Movies Only)"
 
-      - name: Upload Coverage to Codecov
-        script: |
-          curl -s https://codecov.io/bash
-          bash <(curl -s https://codecov.io/bash) -t "$CODECOV_TOKEN" -f ./coverage/merged_lcov.info -n "Flutter CI (Merged)"
+      #      - name: Install lcov
+#        script: brew update && brew install lcov
+
+#      - name: Combine Coverage Reports
+#        script: |
+#            #!/bin/bash
+#            mkdir -p coverage
+#            $(brew --prefix lcov)/bin/lcov \
+#              -a core/coverage/lcov.info \
+#              -a movies/coverage/lcov.info \
+#              -a tv_series/coverage/lcov.info \
+#              -o coverage/merged_lcov.info
+
+#      - name: Upload Coverage to Codecov
+#        script: |
+#          curl -s https://codecov.io/bash
+#          bash <(curl -s https://codecov.io/bash) -t "$CODECOV_TOKEN" -f ./coverage/merged_lcov.info -n "Flutter CI (Merged)"
 
 #      - name: Build APK with Flutter
 #        script: flutter build apk --debug
