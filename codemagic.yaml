@@ -49,12 +49,13 @@ workflows:
 
       - name: Combine Coverage Reports
         script: |
-            mkdir -p coverage
-            lcov \                  
-              -a core/coverage/lcov.info \
-              -a movies/coverage/lcov.info \
-              -a tv_series/coverage/lcov.info \
-              -o coverage/merged_lcov.info
+          #!/bin/bash
+          mkdir -p coverage
+          /opt/homebrew/Cellar/lcov/$(brew --prefix lcov)/bin/lcov \
+          -a core/coverage/lcov.info \
+          -a movies/coverage/lcov.info \
+          -a tv_series/coverage/lcov.info \
+          -o coverage/merged_lcov.info
 
       - name: Generate HTML Report
         script: genhtml coverage/merged_lcov.info -o coverage/merged_html
@@ -64,14 +65,14 @@ workflows:
           curl -s https://codecov.io/bash
           bash <(curl -s https://codecov.io/bash) -f ./coverage/merged_lcov.info -n "Flutter CI (Merged)"
 
-      - name: Build APK with Flutter
-        script: flutter build apk --debug
-
-      - name: Create Debug and Test APK
-        script: |
-          cd android  
-          ./gradlew app:assembleAndroidTest  
-          ./gradlew app:assembleDebug -Ptarget=integration_test/app_test.dart
+#      - name: Build APK with Flutter
+#        script: flutter build apk --debug
+#
+#      - name: Create Debug and Test APK
+#        script: |
+#          cd android
+#          ./gradlew app:assembleAndroidTest
+#          ./gradlew app:assembleDebug -Ptarget=integration_test/app_test.dart
 
     artifacts:
       - build/app/outputs/flutter-apk/app-*.apk
