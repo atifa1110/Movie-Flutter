@@ -35,23 +35,15 @@ workflows:
       - name: Run unit tests (tv series module)
         script: flutter test tv_series/test
 
-      - name: Build APK with Flutter
-        script: flutter build apk --debug
-
-      - name: Create Debug and Test APK
-        script: |
-          cd android  
-          ./gradlew app:assembleAndroidTest  
-          ./gradlew app:assembleDebug -Ptarget=integration_test/app_test.dart
-
       - name: Run tests with coverage - Core Module
-        script: cd core && flutter test --coverage -o coverage/lcov.info
+        script: cd core && flutter test --coverage
 
       - name: Run tests with coverage - Movies Module
-        script: cd movies && flutter test --coverage -o coverage/lcov.info
+        script: cd movies && flutter test --coverage
 
       - name: Run tests with coverage - TV Series Module
-        script: cd tv_series && flutter test --coverage -o coverage/lcov.info
+
+        script: cd tv_series && flutter test --coverage
 
       - name: Combine Coverage Reports
         script: |
@@ -71,6 +63,15 @@ workflows:
         script: |
             curl -s https://codecov.io/bash
             bash <(curl -s https://codecov.io/bash) -f ./coverage/merged_lcov.info -n "Flutter CI (Merged)"
+
+      - name: Build APK with Flutter
+        script: flutter build apk --debug
+
+      - name: Create Debug and Test APK
+        script: |
+          cd android  
+          ./gradlew app:assembleAndroidTest  
+          ./gradlew app:assembleDebug -Ptarget=integration_test/app_test.dart
 
     artifacts:
       - build/app/outputs/flutter-apk/app-*.apk
