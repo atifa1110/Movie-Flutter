@@ -42,27 +42,27 @@ workflows:
         script: cd movies && flutter test --coverage
 
       - name: Run tests with coverage - TV Series Module
-
         script: cd tv_series && flutter test --coverage
+
+      - name: Install lcov
+        script: brew update && brew install lcov
 
       - name: Combine Coverage Reports
         script: |
-          sudo apt update
-          sudo apt install -y lcov
-          mkdir -p coverage
-          lcov \
-            -a core/coverage/lcov.info \
-            -a movies/coverage/lcov.info \
-            -a tv_series/coverage/lcov.info \
-            -o coverage/merged_lcov.info
+            mkdir -p coverage
+            lcov \                  
+              -a core/coverage/lcov.info \
+              -a movies/coverage/lcov.info \
+              -a tv_series/coverage/lcov.info \
+              -o coverage/merged_lcov.info
 
       - name: Generate HTML Report
         script: genhtml coverage/merged_lcov.info -o coverage/merged_html
 
       - name: Upload Coverage to Codecov (Contoh dengan file gabungan)
         script: |
-            curl -s https://codecov.io/bash
-            bash <(curl -s https://codecov.io/bash) -f ./coverage/merged_lcov.info -n "Flutter CI (Merged)"
+          curl -s https://codecov.io/bash
+          bash <(curl -s https://codecov.io/bash) -f ./coverage/merged_lcov.info -n "Flutter CI (Merged)"
 
       - name: Build APK with Flutter
         script: flutter build apk --debug
