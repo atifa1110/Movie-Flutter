@@ -47,23 +47,28 @@ workflows:
 #      - name: Run tests with coverage - TV Series Module
 #        script: cd tv_series && flutter test --coverage
 
-      - name: Debug Codecov Token
+      - name: Collecting code coverage and storing in a location
         script: |
-            echo "Codecov Token: $CODECOV_TOKEN"
+          HOMEBREW_NO_AUTO_UPDATE=1 brew install lcov
+            mkdir -p test-results 
+            flutter test \
+              --coverage \
+              --machine \
+              > test-results/flutter.json
 
-      - name: Debug - List Coverage Files
-        script: |
-          ls -l ./movies/coverage/
-
-      - name: Check coverage file content
-        script: |
-          cat ./movies/coverage/lcov.info
+            code_coverage=$(lcov --list $CM_BUILD_DIR/coverage/lcov.info | sed -n "s/.*Total:|\(.*\)%.*/\1/p")          
+            echo "Code Coverage: ${code_coverage}% "
+            if (( $(echo "$code_coverage < $CODE_COVERAGE_TARGET" | bc) ))
+              then { echo "code coverage is less than expected" && exit 1; }
+            fi 
+          test_report: test-results/flutter.json
 
       - name: Codecov upload
         script: |
-          curl -Os https://uploader.codecov.io/latest/macos/codecov
-          chmod +x codecov
-          ./codecov -t "${CODECOV_TOKEN}" 
+            #!/bin/bash
+                curl -Os https://uploader.codecov.io/latest/macos/codecov
+                chmod +x codecov
+                ./codecov -t ${CODECOV_TOKEN} -f "test-results/flutter.json"
 
 #      - name: Install lcov
 #        script: brew update && brew install lcov
@@ -94,3 +99,4 @@ workflows:
 
     artifacts:
       - build/app/outputs/flutter-apk/app-*.apk
+      - flutter_drive.log
