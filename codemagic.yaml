@@ -15,6 +15,7 @@ workflows:
       cocoapods: default
       groups:
         - token
+
     scripts:
       - name: Get dependencies
         script: flutter pub get
@@ -58,7 +59,7 @@ workflows:
         script: |
           curl -Os https://uploader.codecov.io/latest/macos/codecov
           chmod +x codecov
-          ./codecov -t "${CODECOV_TOKEN}" -f ./movies/coverage/lcov.info -r "atifa1110/Movie-Flutter" -b "submission_2"
+          ./codecov -t "${CODECOV_TOKEN}" -f ./movies/coverage/lcov.info -r atifa1110/Movie-Flutter
 
 #      - name: Install lcov
 #        script: brew update && brew install lcov
