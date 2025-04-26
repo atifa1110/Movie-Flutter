@@ -55,11 +55,15 @@ workflows:
         script: |
           ls -l ./movies/coverage/
 
+      - name: Check coverage file content
+        script: |
+          cat ./movies/coverage/lcov.info
+
       - name: Codecov upload
         script: |
           curl -Os https://uploader.codecov.io/latest/macos/codecov
           chmod +x codecov
-          ./codecov -t "${CODECOV_TOKEN}" -f ./movies/coverage/lcov.info -r atifa1110/Movie-Flutter
+          ./codecov -t "${CODECOV_TOKEN}" 
 
 #      - name: Install lcov
 #        script: brew update && brew install lcov
