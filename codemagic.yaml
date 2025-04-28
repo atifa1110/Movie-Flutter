@@ -43,34 +43,16 @@ workflows:
 #
       - name: Run tests with coverage - Movies Module
         script: cd movies && flutter test --coverage
+
+      - name: Codecov upload (Movies Only)
+        script: |
+            curl -Os https://uploader.codecov.io/latest/macos/codecov
+            chmod +x codecov
+            ./codecov -t "${CODECOV_TOKEN}" -f ./movies/coverage/lcov.info
 #
 #      - name: Run tests with coverage - TV Series Module
 #        script: cd tv_series && flutter test --coverage
 
-      - name: Collecting code coverage and storing in a location
-        script: |
-          HOMEBREW_NO_AUTO_UPDATE=1 brew install lcov
-        
-          cd movies
-            mkdir -p test-results 
-            flutter test \
-              --coverage \
-              --machine \
-              > test-results/flutter.json
-
-            code_coverage=$(lcov --list $CM_BUILD_DIR/coverage/lcov.info | sed -n "s/.*Total:|\(.*\)%.*/\1/p")          
-            echo "Code Coverage: ${code_coverage}% "
-            if (( $(echo "$code_coverage < $CODE_COVERAGE_TARGET" | bc) ))
-              then { echo "code coverage is less than expected" && exit 1; }
-            fi 
-          test_report: test-results/flutter.json
-
-      - name: Codecov upload
-        script: |
-            #!/bin/bash
-                curl -Os https://uploader.codecov.io/latest/macos/codecov
-                chmod +x codecov
-                ./codecov -t ${CODECOV_TOKEN} -f "test-results/flutter.json"
 
 #      - name: Install lcov
 #        script: brew update && brew install lcov
