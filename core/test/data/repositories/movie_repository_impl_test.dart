@@ -106,6 +106,21 @@ void main() {
       expect(result,
           equals(const Left(ConnectionFailure('Failed to connect to the network'))));
     });
+
+    test(
+        'should return common failure when certificate is not valid',
+            () async {
+          // arrange
+          when(mockRemoteDataSource.getNowPlayingMovies())
+              .thenThrow(const TlsException('Certificated not valid'));
+          // act
+          final result = await repository.getNowPlayingMovies();
+          // assert
+          verify(mockRemoteDataSource.getNowPlayingMovies());
+          expect(result,
+              equals(const Left(CommonFailure('Certificated not valid'))));
+        });
+
   });
 
   group('Popular Movies', () {
@@ -146,6 +161,19 @@ void main() {
       expect(
           result, const Left(ConnectionFailure('Failed to connect to the network')));
     });
+
+    test(
+        'should return common failure when certificate is not valid',
+            () async {
+          // arrange
+          when(mockRemoteDataSource.getPopularMovies())
+              .thenThrow(const TlsException('Certificated not valid'));
+          // act
+          final result = await repository.getPopularMovies();
+          // assert
+          expect(
+              result, const Left(CommonFailure('Certificated not valid')));
+        });
   });
 
   group('Top Rated Movies', () {
@@ -185,6 +213,19 @@ void main() {
       expect(
           result, const Left(ConnectionFailure('Failed to connect to the network')));
     });
+
+    test(
+        'should return common failure when certificate is not valid',
+            () async {
+          // arrange
+          when(mockRemoteDataSource.getTopRatedMovies())
+              .thenThrow(const TlsException('Certificated not valid'));
+          // act
+          final result = await repository.getTopRatedMovies();
+          // assert
+          expect(
+              result, const Left(CommonFailure('Certificated not valid')));
+        });
   });
 
   group('Get Movie Detail', () {
@@ -252,6 +293,20 @@ void main() {
       expect(result,
           equals(const Left(ConnectionFailure('Failed to connect to the network'))));
     });
+
+    test(
+        'should return common failure when certificate is not valid',
+            () async {
+          // arrange
+          when(mockRemoteDataSource.getMovieDetail(tId))
+              .thenThrow(const TlsException('Certificated not valid'));
+          // act
+          final result = await repository.getMovieDetail(tId);
+          // assert
+          verify(mockRemoteDataSource.getMovieDetail(tId));
+          expect(result,
+              equals(const Left(CommonFailure('Certificated not valid'))));
+        });
   });
 
   group('Get Movie Recommendations', () {
@@ -298,6 +353,20 @@ void main() {
       expect(result,
           equals(const Left(ConnectionFailure('Failed to connect to the network'))));
     });
+
+    test(
+        'should return common failure when certificate is not valid',
+            () async {
+          // arrange
+          when(mockRemoteDataSource.getMovieRecommendations(tId))
+              .thenThrow(const TlsException('Certificated not valid'));
+          // act
+          final result = await repository.getMovieRecommendations(tId);
+          // assert
+          verify(mockRemoteDataSource.getMovieRecommendations(tId));
+          expect(result,
+              equals(const Left(CommonFailure('Certificated not valid'))));
+        });
   });
 
   group('Search Movies', () {
@@ -339,6 +408,19 @@ void main() {
       expect(
           result, const Left(ConnectionFailure('Failed to connect to the network')));
     });
+
+    test(
+        'should return common failure when certificate is not valid',
+            () async {
+          // arrange
+          when(mockRemoteDataSource.searchMovies(tQuery))
+              .thenThrow(const TlsException('Certificated not valid'));
+          // act
+          final result = await repository.searchMovies(tQuery);
+          // assert
+          expect(
+              result, const Left(CommonFailure('Certificated not valid')));
+        });
   });
 
   group('save watchlist', () {
