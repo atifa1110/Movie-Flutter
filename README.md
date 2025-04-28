@@ -3,6 +3,7 @@
 A **Movie App** built with **Flutter** using the [The Movie Database (TMDb)](https://www.themoviedb.org/) API. This app provides a catalog of movies and TV series with various features to enhance the user experience.
 
 ![Codemagic Build Status](https://api.codemagic.io/apps/67456ccfed8fdcda56f83696/67456ccfed8fdcda56f83695/status_badge.svg)
+[![codecov](https://codecov.io/github/atifa1110/Movie-Flutter/branch/submission_2/graph/badge.svg?token=MPAEX9ZVRV)](https://codecov.io/github/atifa1110/Movie-Flutter)
 
 ---
 
