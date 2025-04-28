@@ -48,7 +48,7 @@ workflows:
         script: |
             curl -Os https://uploader.codecov.io/latest/macos/codecov
             chmod +x codecov
-            ./codecov -t "${CODECOV_TOKEN}" -f ./movies/coverage/lcov.info
+            ./codecov -t "${CODECOV_TOKEN}"
 #
 #      - name: Run tests with coverage - TV Series Module
 #        script: cd tv_series && flutter test --coverage
