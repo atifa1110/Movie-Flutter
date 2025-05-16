@@ -36,14 +36,16 @@ class TvSeriesCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      tvSeries.name ?? '-',
+                      tvSeries.name ?? 'Title is Empty',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: kHeading6,
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      tvSeries.overview ?? '-',
+                      (tvSeries.overview != null && tvSeries.overview!.isNotEmpty)
+                          ? tvSeries.overview!
+                          : 'Description is Empty',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -59,7 +61,9 @@ class TvSeriesCard extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(8)),
                 child: CachedNetworkImage(
-                  imageUrl: '$baseImageUrl${tvSeries.posterPath}',
+                  imageUrl: tvSeries.posterPath != null
+                ? '$baseImageUrl${tvSeries.posterPath}'
+                  : 'https://placehold.co/800@3x.png',
                   width: 80,
                   placeholder: (context, url) => const Center(
                     child: CircularProgressIndicator(),

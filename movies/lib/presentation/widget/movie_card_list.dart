@@ -37,14 +37,16 @@ class MovieCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      movie.title ?? '-',
+                      movie.title ?? 'Title is Empty',
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: kHeading6,
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      movie.overview ?? '-',
+                      (movie.overview != null && movie.overview!.isNotEmpty)
+                          ? movie.overview!
+                          : 'Description is Empty',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -60,7 +62,9 @@ class MovieCard extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(8)),
                 child: CachedNetworkImage(
-                  imageUrl: '$baseImageUrl${movie.posterPath}',
+                  imageUrl: movie.posterPath != null
+                      ? '$baseImageUrl${movie.posterPath}'
+                      : 'https://placehold.co/800@3x.png',
                   width: 80,
                   placeholder: (context, url) => const Center(
                     child: CircularProgressIndicator(),
